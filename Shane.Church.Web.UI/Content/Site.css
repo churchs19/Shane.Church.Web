@@ -1,0 +1,106 @@
+﻿@font-face {
+	font-family: 'SFCollegiateSolidRegular';
+	src: url('fonts/sf_collegiate_solid-webfont.eot');
+	src: url('fonts/sf_collegiate_solid-webfont.eot?#iefix') format('embedded-opentype'), 
+		url('fonts/sf_collegiate_solid-webfont.woff') format('woff'), 
+		url('fonts/sf_collegiate_solid-webfont.ttf') format('truetype'), 
+		url('fonts/sf_collegiate_solid-webfont.svg#SFCollegiateSolidRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	padding-bottom: 56px;
+}
+
+.center-brand {
+	text-align: center;
+}
+
+.navbar-inner {
+	padding-bottom: 2px;
+}
+
+.navbar .brand {
+	font-family: 'Arial Black';
+	font-style: italic;
+	float: none;
+	display: inline-block;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 45px;
+	line-height: 41px;
+	font-size: 41px;
+	background-image: url('images/SSCLogoMetro45.png');
+	background-repeat: no-repeat;
+}
+
+.navbar .nav > li > a {
+	color: #FFFFFF;
+}
+
+.navbar .nav > li > a:hover {
+	color: #AAAAAA;
+}
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+	background-image: none;
+	background-color: #800080;
+	color: #fff;
+}
+
+/* info and errors */
+.message-info {
+	border: 1px solid;
+	clear: both;
+	padding: 10px 20px;
+}
+
+.message-error {
+	clear: both;
+	color: #e80c4d;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+}
+
+.message-success {
+	color: #7ac0da;
+	font-size: 1.3em;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+}
+
+.error {
+	color: #e80c4d;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+	color: #e80c4d;
+	font-weight: bold;
+}
+
+.field-validation-valid {
+	display: none;
+}
+
+input.input-validation-error {
+	border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+	border: 0 none;
+}
+
+.validation-summary-errors {
+	color: #e80c4d;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.validation-summary-valid {
+	display: none;
+}
+
+

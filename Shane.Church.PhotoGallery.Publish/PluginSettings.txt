@@ -1,0 +1,4 @@
+﻿HKLM\SOFTWARE\Microsoft\Windows Live\PublishPlugins\ShaneChurchPlugin
+   AssemblyPath="C:\Users\Shane\Documents\Visual Studio 2010\Projects\PhotoGalleryPlugin\Shane.Church.PhotoGallery.Publish\bin\Release\Shane.Church.PhotoGallery.Publish.dll"
+   ClassName="Shane.Church.PhotoGallery.Publish.PublishPlugin"
+   FriendlyName="s-church.net"

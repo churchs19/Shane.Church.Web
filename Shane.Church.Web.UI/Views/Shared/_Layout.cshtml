@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>@ViewBag.Title - My ASP.NET MVC Application</title>
+		<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		@Styles.Render("~/Content/bootstrapcss")
+		@Styles.Render("~/Content/css")
+		@Scripts.Render("~/bundles/modernizr")
+	</head>
+	<body>
+		<div class="container-fluid">
+			<header>
+				<section id="login">
+					@Html.Partial("_LoginPartial")
+				</section>
+			</header>
+			<section>
+				@RenderSection("featured", required: false)
+				<section class="content-wrapper main-content clear-fix">
+					@RenderBody()
+				</section>
+
+			</section>
+			<footer>
+				<nav class="navbar navbar-fixed-bottom">
+					<div class="navbar-inner">
+						<ul class="nav pull-left">
+							<li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Software
+									<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>@Html.ActionLink("Windows Phone", "WindowsPhone", "Software", new { }, new { id = 0 })</li>
+									<li>@Html.ActionLink("Windows 7 Gadgets", "Win7Gadgets", "Software", new { }, new { id = 0 })</li>
+									<li>@Html.ActionLink("Windows Mobile Smartphone", "WMSmartphone", "Software", new { }, new { id = 0 })</li>
+									<li>@Html.ActionLink("Windows Mobile Pocket PC", "WMPocketPC", "Software", new { }, new { id = 0 })</li>
+									<li>@Html.ActionLink("Windows", "MSWindows", "Software", new { }, new { id = 0 })</li>
+									<li>@Html.ActionLink("Pocket PC", "MSPocketPC", "Software", new { }, new { id = 0 })</li>
+									<li>@Html.ActionLink("Palm OS", "Palm", "Software", new { }, new { id = 0 })</li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav pull-right">
+							<li>@Html.ActionLink("Photo Album", "Index", "PhotoAlbum")</li>
+							<li><a href="@Url.Content("~/Resume.pdf")">Resume</a></li>
+						</ul>
+						<div class="center-brand">
+							<a class="brand" href="@Url.Action("Index", "Home")">Shane Church</a>
+						</div>
+					</div>
+				</nav>
+			</footer>
+		</div>
+
+		@Scripts.Render("~/bundles/jquery")
+		@Scripts.Render("~/bundles/bootstrap")
+		@RenderSection("scripts", required: false)
+	</body>
+</html>
