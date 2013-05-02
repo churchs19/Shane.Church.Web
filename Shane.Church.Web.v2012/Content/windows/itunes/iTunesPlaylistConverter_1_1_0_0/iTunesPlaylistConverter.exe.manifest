@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asmv1:assemblyIdentity name="iTunesPlaylistConverter.exe" version="1.1.0.0" publicKeyToken="9fb8578d5acab7b4" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="iTunesPlaylistConverter" version="1.1.2176.16139" language="neutral" processorArchitecture="msil" />
+    <commandLine file="iTunesPlaylistConverter.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="4" minorVersion="10" buildNumber="0" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="2.0.50727.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="iTunesPlaylistConverter.exe" size="212992">
+      <assemblyIdentity name="iTunesPlaylistConverter" version="1.1.2176.16139" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Y+TBFJOWbl7JMT9KZAVBfl2X9N8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Parser.dll" size="20480">
+      <assemblyIdentity name="Parser" version="1.0.2176.16138" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Z2hGt3zbFrNTcP9rvC+0CwFGEF8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WizardControl.dll" size="65536">
+      <assemblyIdentity name="WizardControl" version="1.1.2176.16139" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>4x2iaRF7cBz3WoeJYtJ96OkJX+E=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="favicon.ico" size="4710">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>1Q06z33tlC7g8csoERU1AOWksfA=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=S-CHURCH\churchs" issuerKeyHash="fc1a174c307538a3f7698709779b9545b35e7e89" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>FRlgjxjzDhd6epUNg3nhs3QdBRU=</DigestValue></Reference></SignedInfo><SignatureValue>rcxWlUOs1BuQsF/CNOA6PxlcDrcuEfEdSHwADAmpTMXwAKHIfr9w3iCsOOk2huEXQmEUxmfU9lZpA5CR2CokMEFYuguEa++zeqh9gQpEdejo4/dzqFpVcKSatPNyYfkFu0qWTBZ2c789sIZGuQ4T6Oz6LOXb56xFCTnrQf1uIPY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>zVc+B9FDKYJxYEMt2kCTZDYH4EOsiMsYgOho7tGuh1ui5bSqS7t8rjMMoa64oBnncZwbt3UCq07EY1boRLS+nt4nfXAXujxidNjHBvOiuukkAHerZ7KvkgNjdmGrgiJ1ePVdxfovOsxU25XTa65lkGASesW8i0fjjOVooLRIuYs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="15051d74b3e179830d957a7a170ef3188f601915" Description="" Url=""><as:assemblyIdentity name="iTunesPlaylistConverter.exe" version="1.1.0.0" publicKeyToken="9fb8578d5acab7b4" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=S-CHURCH\churchs</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Mm0XnrCoaLQ0tr78QwzLOH5l29k=</DigestValue></Reference></SignedInfo><SignatureValue>MUHRYKHX4zYiLYIDONkrWxvrJwQnXbG7VoiQchW44Nb2Ux3I94x2X9utHtMKD3Wu8dyfc9Yyi2XCdZBtJ1YEo5IB7Ynt/2LEXr1PBx5YdV713G3aKMULS4TeIFWHQ8KnqwbVXG3KT7MrQVEalFNh+qJtNNct0cBwOTHy92B3Q48=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>zVc+B9FDKYJxYEMt2kCTZDYH4EOsiMsYgOho7tGuh1ui5bSqS7t8rjMMoa64oBnncZwbt3UCq07EY1boRLS+nt4nfXAXujxidNjHBvOiuukkAHerZ7KvkgNjdmGrgiJ1ePVdxfovOsxU25XTa65lkGASesW8i0fjjOVooLRIuYs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCAT6gAwIBAgIQ3tIowgr7t71MqVkAdVL7ljAJBgUrDgMCHQUAMCsxKTAnBgNVBAMeIABTAC0AQwBIAFUAUgBDAEgAXABjAGgAdQByAGMAaABzMB4XDTA1MTIxNjE1NTcwMFoXDTA2MTIxNjIxNTcwMFowKzEpMCcGA1UEAx4gAFMALQBDAEgAVQBSAEMASABcAGMAaAB1AHIAYwBoAHMwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAM1XPgfRQymCcWBDLdpAk2Q2B+BDrIjLGIDoaO7RrodbouW0qku7fK4zDKGuuKAZ53GcG7d1AqtOxGNW6ES0vp7eJ31wF7o8YnTYxwbzorrpJAB3q2eyr5IDY3Zhq4IidXj1XcX6LzrMVNuV02uuZZBgEnrFvItH44zlaKC0SLmLAgMBAAEwCQYFKw4DAh0FAAOBgQBRcBcq2zDT8cX3U2gO/wy05y8OZPdn6x0xJmF0zbKJ43gdnhn9+B62Mx8Rtxa1R8lqkUa94I4FP4I73wiB+G1Ioo0gfS2QcL0Zku4nerLPDFnpOwkkIVN6cT9Rl7FZrFf7daFQsiJ4e+nIUMfoHlIXzNziw6qsRyaMIq9lSSs2jQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

@@ -1,0 +1,90 @@
+﻿@model Shane.Church.Web.v2012.Models.Software.SoftwareViewModel
+@{
+	ViewBag.Title = "Shane Church - Windows Phone";
+	ViewBag.Header = "Windows Phone";
+	ViewBag.ShortHeader = "Windows Phone";
+}
+
+<div class="software-nav">
+	<ul class="tabs">
+		<li class="first last">
+			<a id="post-tab-1" href="#tab-1" >Stirling Money</a>
+		</li>
+	</ul>
+</div>
+<div class="panes">
+	<div class="pane tab-1" id="tab-1">
+		<h2><a href="@Url.Action("WindowsPhone", "Software", new { id = 1 })">Stirling Money</a></h2>
+		<div><a href="http://windowsphone.com/s?appid=c81aa8df-5dd6-4afe-b0eb-58a824581535" class="blank"><img src="@Url.Content("~/Content/Images/WindowsPhone_208x67_blu.png")" alt="Windows Phone Marketplace" class="noborder" /></a></div>
+		<img class="imagefloat" src="@Url.Content("~/software/windowsphone/stirlingmoney/02.png")" alt="Stirling Money Screenshot - Accounts Screen" style="max-height:400px"/>
+		<p>Stirling Money replaces your checkbook register and does all of the math for you.</p>
+		<p>Features: </p>
+		<ul>
+			<li>Manage multiple accounts</li>
+			<li>Pin live tiles for direct access to an individual account</li>
+			<li>Categorize transactions</li>
+			<li>Plan and track budgets and financial goals</li>
+			<li>Visualize your financial health and progress with a series of charts</li>
+			<li>Search transactions to find individual transactions within an account</li>
+			<li>Tap and hold to edit accounts, transactions, categories, budgets, and goals</li>
+			<li>Backup and restore from SkyDrive</li>
+		</ul>
+		<p>
+			Version 2.0
+		</p>
+		<ul>
+			<li>Added the ability to create and track budgets and financial goals</li>
+			<li>Added visualizations of net income, performance versus budget, and spending by category</li>
+			<li>Sort account list alphabetically or by frequency of use</li>
+			<li>Added search functionality in transaction list</li>
+		</ul>
+		<p>
+			Version 1.5
+		</p>
+		<ul>
+			<li>Usability enhancements to add/edit transaction flow</li>
+			<li>Improved input validation to address crashes where a location was not entered for a transaction</li>
+		</ul>
+		<p>
+			Version 1.4
+		</p>
+		<ul>
+			<li>Adjusted the initial input mechanism for new transactions to speed entry.</li>
+		</ul>
+		<p>
+			Version 1.3
+		</p>
+		<ul>
+			<li>Now free!</li>
+			<li>Machine translated into all languages on the Windows Phone Marketplace</li>
+		</ul>
+		<p>
+			Version 1.2
+		</p>
+		<ul>
+			<li>Improved performance loading accounts with large numbers of transactions</li>
+			<li>Changed keyboard type for text entry to enable autocomplete</li>
+			<li>Fixed sorting of categories and accounts so that they are sorted alphabetically in all lists</li>
+		</ul>
+		<p>Stirling Money is available in the <a href="http://windowsphone.com/s?appid=c81aa8df-5dd6-4afe-b0eb-58a824581535">Windows Phone Marketplace</a> as a free download.</p>
+		<div class="clear">&nbsp;</div>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/ScreenshotSplash.png")" alt="Stirling Money Screenshot - Splash Screen" style="max-height:400px"/>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/03.png")" alt="Stirling Money Screenshot" style="max-height:400px"/>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/04.png")" alt="Stirling Money Screenshot" style="max-height:400px"/>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/05.png")" alt="Stirling Money Screenshot" style="max-height:400px"/>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/06.png")" alt="Stirling Money Screenshot" style="max-height:400px"/>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/07.png")" alt="Stirling Money Screenshot" style="max-height:400px"/>
+		<img class="imagefloatleft" src="@Url.Content("~/software/windowsphone/stirlingmoney/08.png")" alt="Stirling Money Screenshot" style="max-height:400px"/>
+		<div class="clear">&nbsp;</div>
+	</div>
+</div>
+@section PostFooter {
+	<script src="@Url.Content("~/Scripts/jquery.tools.min.js")" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$().Navigation("initTabs", {
+				selectedIndex: @Model.Id
+			});
+		});
+	</script>
+}

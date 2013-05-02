@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F72FEFC7-266F-4920-8C38-67D861763E2D}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shane.Church.Web.v2012</RootNamespace>
+    <AssemblyName>Shane.Church.Web.v2012</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.2.2.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer">
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty">
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Recaptcha">
+      <HintPath>..\packages\recaptcha.1.0.5.0\lib\.NetFramework 4.0\Recaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc3">
+      <HintPath>..\packages\Unity.Mvc3.1.2\lib\net40\Unity.Mvc3.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlRpcMvc">
+      <HintPath>..\packages\XmlRpcMvc.0.2.2\lib\net40\XmlRpcMvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LegacyController.cs" />
+    <Compile Include="Controllers\PhotoAlbumController.cs" />
+    <Compile Include="Controllers\PhotoApiController.cs" />
+    <Compile Include="Controllers\PhotoCategoryApiController.cs" />
+    <Compile Include="Controllers\SoftwareController.cs" />
+    <Compile Include="Controllers\SyndicationController.cs" />
+    <Compile Include="Controllers\XmlRpcController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AtomResult.cs" />
+    <Compile Include="Helpers\CaptchaValidatorAttribute.cs" />
+    <Compile Include="Helpers\PermanentRedirectResult.cs" />
+    <Compile Include="Helpers\RecaptchaHtmlHelper.cs" />
+    <Compile Include="Helpers\RssResult.cs" />
+    <Compile Include="Helpers\SyndicationResult.cs" />
+    <Compile Include="Helpers\TagCloud.cs" />
+    <Compile Include="Helpers\Utility.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Blog\ArchiveLinkModel.cs" />
+    <Compile Include="Models\Blog\CommentsViewModel.cs" />
+    <Compile Include="Models\Blog\EntryViewModel.cs" />
+    <Compile Include="Models\Blog\NewCommentModel.cs" />
+    <Compile Include="Models\Blog\PageViewModel.cs" />
+    <Compile Include="Models\Blog\TagCloudItem.cs" />
+    <Compile Include="Models\Home\IndexViewModel.cs" />
+    <Compile Include="Models\PhotoAlbum\AlbumViewModel.cs" />
+    <Compile Include="Models\PhotoAlbum\IndexViewModel.cs" />
+    <Compile Include="Models\PhotoViewModel.cs" />
+    <Compile Include="Models\Software\SoftwareViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\ExceptionHandlerFilter.cs" />
+    <Compile Include="XmlRpc\MetaWeblogApi.cs" />
+    <Compile Include="XmlRpc\Models\BlogInfo.cs" />
+    <Compile Include="XmlRpc\Models\CategoryInfo.cs" />
+    <Compile Include="XmlRpc\Models\MediaObject.cs" />
+    <Compile Include="XmlRpc\Models\MediaObjectInfo.cs" />
+    <Compile Include="XmlRpc\Models\PostInfo.cs" />
+    <Compile Include="XmlRpc\Models\UserInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\images\bgslice-modal-background.png" />
+    <Content Include="Content\images\bgtile.gif" />
+    <Content Include="Content\images\bgtile2.gif" />
+    <Content Include="Content\images\btn-close-sprite.png" />
+    <Content Include="Content\images\coorsbg.jpg" />
+    <Content Include="Content\images\coorsbg1053.png" />
+    <Content Include="Content\images\coorsbg30.jpg" />
+    <Content Include="Content\images\coorsbg55.jpg" />
+    <Content Include="Content\images\EUI_logo_color.gif" />
+    <Content Include="Content\images\favicon.ico" />
+    <Content Include="Content\images\homebg.jpg" />
+    <Content Include="Content\images\homebg40.jpg" />
+    <Content Include="Content\images\html5-badge-h-css3-semantics.png" />
+    <Content Include="Content\images\map-annotation-pointer.png" />
+    <Content Include="Content\images\new_overlay.ico" />
+    <Content Include="Content\images\pushpin-green.gif" />
+    <Content Include="Content\images\pushpin-purple.gif" />
+    <Content Include="Content\images\scsmall.gif" />
+    <Content Include="Content\images\Search.png" />
+    <Content Include="Content\images\side_nav_photo.jpg" />
+    <Content Include="Content\images\SSCLogo32.png" />
+    <Content Include="Content\images\SSCLogo44.png" />
+    <Content Include="Content\images\SSCLogo71.png" />
+    <Content Include="Content\images\WindowsPhone_208x67_blu.png" />
+    <Content Include="Content\images\xml.png" />
+    <Content Include="Content\jquery.pinify.css" />
+    <Content Include="Content\jquery.pinify.min.css" />
+    <Content Include="Content\jquery.text-shadow.css" />
+    <Content Include="Content\Normalize.css" />
+    <Content Include="Content\OldIE.css" />
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\ResponsiveSite.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\SyntaxHighlighter\shCore.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreDjango.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreEclipse.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreEmacs.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreFadeToGrey.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreMDUltra.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreMidnight.css" />
+    <Content Include="Content\SyntaxHighlighter\shCoreRDark.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeDefault.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeDjango.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeEclipse.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeEmacs.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeFadeToGrey.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeMDUltra.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeMidnight.css" />
+    <Content Include="Content\SyntaxHighlighter\shThemeRDark.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="software\gadgets\stirlingweather\Stirling-Weather-Extended.png" />
+    <Content Include="software\gadgets\stirlingweather\Stirling-Weather-Radar.png" />
+    <Content Include="software\gadgets\stirlingweather\Stirling-Weather-Warnings.png" />
+    <Content Include="software\gadgets\stirlingweather\Stirling-Weather.png" />
+    <Content Include="Global.asax" />
+    <Content Include="software\windowsphone\stirlingmoney\02.png" />
+    <Content Include="software\windowsphone\stirlingmoney\03.png" />
+    <Content Include="software\windowsphone\stirlingmoney\04.png" />
+    <Content Include="software\windowsphone\stirlingmoney\05.png" />
+    <Content Include="software\windowsphone\stirlingmoney\06.png" />
+    <Content Include="software\windowsphone\stirlingmoney\07.png" />
+    <Content Include="software\windowsphone\stirlingmoney\08.png" />
+    <Content Include="software\windowsphone\stirlingmoney\MarketplaceTile.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotAccounts.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotAccountsEspanol.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotAccountsTapAndHold.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotBackup.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotCheck.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotSplash.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotTransactions.png" />
+    <Content Include="software\windowsphone\stirlingmoney\ScreenshotTransactionsEditDelete.png" />
+    <Content Include="software\windows\basecampsync\BasecampSync.png" />
+    <Content Include="software\windows\basecampsync\BasecampSyncProgress.png" />
+    <Content Include="software\windows\basecampsync\BasecampSyncRibbon.png" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter.htm" />
+    <Content Include="software\windows\itunes\iTunesScreen.jpg" />
+    <Content Include="software\windows\itunes\setup.exe" />
+    <Content Include="software\windows\stirlingweather\autorun.inf" />
+    <Content Include="software\windows\stirlingweather\publish.htm" />
+    <Content Include="software\windows\stirlingweather\setup.exe" />
+    <Content Include="software\windows\stirlingweather\StirlingWeatherTray1.jpg" />
+    <Content Include="software\windows\stirlingweather\StirlingWeatherTray2.jpg" />
+    <Content Include="software\windows\stirlingweather\StirlingWeatherTray3.jpg" />
+    <Content Include="software\wm6\StirlingBlog.SP.CAB" />
+    <Content Include="software\wm6\swsp.htm" />
+    <Content Include="software\gadgets\stirlingweather\StirlingWeather.gadget" />
+    <Content Include="software\pocketpc\currency\CurrencyConverterSetup.msi" />
+    <Content Include="software\pocketpc\langtons\LangtonsAnt.zip" />
+    <Content Include="software\pocketpc\stirlingweather\StirlingWeatherSetup.msi" />
+    <Content Include="software\pocketpc\themes\AlluvialFan.tsk" />
+    <Content Include="software\pocketpc\themes\Bandelier.tsk" />
+    <Content Include="software\pocketpc\themes\Bourque.tsk" />
+    <Content Include="software\pocketpc\themes\CH2MHill.tsk" />
+    <Content Include="software\pocketpc\themes\ColoradoFall.tsk" />
+    <Content Include="software\pocketpc\themes\ColoradoWinter.tsk" />
+    <Content Include="software\pocketpc\themes\CUBuffs.tsk" />
+    <Content Include="software\pocketpc\themes\CUBuffs04.tsk" />
+    <Content Include="software\pocketpc\themes\RMNP.tsk" />
+    <Content Include="software\pocketpc\themes\Rockies.tsk" />
+    <Content Include="software\pocketpc\themes\Rockies06.tsk" />
+    <Content Include="software\pocketpc\themes\RTS.tsk" />
+    <Content Include="software\pocketpc\themes\Yucca.tsk" />
+    <Content Include="software\pocketpc\themes\Z3-Morrison-2.tsk" />
+    <Content Include="wlwmanifest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\PublishProfiles\schurch - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\schurch - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.8.3.intellisense.js" />
+    <Content Include="software\palmos\rintrack\rintrackscreen.jpg" />
+    <Content Include="software\pocketpc\4corners\4CornersIcon.gif" />
+    <Content Include="software\pocketpc\4corners\4CornersScreen.gif" />
+    <Content Include="software\pocketpc\4corners\fourcornersscreen.jpg" />
+    <Content Include="software\pocketpc\4corners\fourcornerssquare.jpg" />
+    <Content Include="software\pocketpc\clocksol\ClockSolIcon.gif" />
+    <Content Include="software\pocketpc\clocksol\ClockSolScreen.gif" />
+    <Content Include="software\pocketpc\clocksol\ClockSolScreen.jpg" />
+    <Content Include="software\pocketpc\clocksol\ClockSolSquareScreen.jpg" />
+    <Content Include="software\pocketpc\currency\Currency2005.jpg" />
+    <Content Include="software\pocketpc\currency\Currency2005Icon.gif" />
+    <Content Include="software\pocketpc\currency\CurrencyConverter2005.cab" />
+    <Content Include="software\pocketpc\currency\CurrencyConverter_PPC.ARM.CAB" />
+    <Content Include="software\pocketpc\currency\CurrencyIcon.gif" />
+    <Content Include="software\pocketpc\currency\CurrencyScreen.gif" />
+    <Content Include="software\pocketpc\dotnet20\NETCFv2.wm.armv4i.cab" />
+    <Content Include="software\pocketpc\dotnet20\System_SR_ENU_wm.cab" />
+    <Content Include="software\pocketpc\Handango100x35.gif" />
+    <Content Include="software\pocketpc\Handango125x125.gif" />
+    <Content Include="software\pocketpc\Handango140x45.gif" />
+    <Content Include="software\pocketpc\hrscorepad\hrgame.jpg" />
+    <Content Include="software\pocketpc\hrscorepad\hrscreens.jpg" />
+    <Content Include="software\pocketpc\hrscorepad\hrtitle.jpg" />
+    <Content Include="software\pocketpc\langtons\langtons.png" />
+    <Content Include="software\pocketpc\MobiHandLogo.gif" />
+    <Content Include="software\pocketpc\NETCFv35.Messages.EN.wm.cab" />
+    <Content Include="software\pocketpc\netchess\chessscreen.jpg" />
+    <Content Include="software\pocketpc\pyramid\Handango_BuyIt_127X59.gif" />
+    <Content Include="software\pocketpc\pyramid\Handango_DownloadIt_127X59.gif" />
+    <Content Include="software\pocketpc\pyramid\PocketGear_buy_button127_59.gif" />
+    <Content Include="software\pocketpc\pyramid\PyramidIcon.gif" />
+    <Content Include="software\pocketpc\pyramid\PyramidScreen.jpg" />
+    <Content Include="software\pocketpc\pyramid\PyramidScreen2.gif" />
+    <Content Include="software\pocketpc\pyramid\PyramidSquare.jpg" />
+    <Content Include="software\pocketpc\stirlingweather\StirlingWeather.CAB" />
+    <Content Include="software\pocketpc\stirlingweather\StirlingWeather1.jpg" />
+    <Content Include="software\pocketpc\stirlingweather\StirlingWeather2.jpg" />
+    <Content Include="software\pocketpc\stirlingweather\StirlingWeather3.jpg" />
+    <Content Include="software\pocketpc\strikeout\StrikeOutIcon.gif" />
+    <Content Include="software\pocketpc\strikeout\StrikeOutScreen.gif" />
+    <Content Include="software\pocketpc\System_SR_enu.cab" />
+    <Content Include="software\pocketpc\themes\alluvial.jpg" />
+    <Content Include="software\pocketpc\themes\alluvial2.jpg" />
+    <Content Include="software\pocketpc\themes\bandelier.jpg" />
+    <Content Include="software\pocketpc\themes\bandelier2.jpg" />
+    <Content Include="software\pocketpc\themes\bourque.jpg" />
+    <Content Include="software\pocketpc\themes\bourque2.jpg" />
+    <Content Include="software\pocketpc\themes\CH2MHill.jpg" />
+    <Content Include="software\pocketpc\themes\CH2MHill2.jpg" />
+    <Content Include="software\pocketpc\themes\coloradofall.jpg" />
+    <Content Include="software\pocketpc\themes\coloradofall2.jpg" />
+    <Content Include="software\pocketpc\themes\CUBuffs04-2.jpg" />
+    <Content Include="software\pocketpc\themes\CUBuffs04.jpg" />
+    <Content Include="software\pocketpc\themes\cutheme.jpg" />
+    <Content Include="software\pocketpc\themes\cutheme2.jpg" />
+    <Content Include="software\pocketpc\themes\rmnp.jpg" />
+    <Content Include="software\pocketpc\themes\rmnp2.jpg" />
+    <Content Include="software\pocketpc\themes\rockies.jpg" />
+    <Content Include="software\pocketpc\themes\rockies06.jpg" />
+    <Content Include="software\pocketpc\themes\rockies062.jpg" />
+    <Content Include="software\pocketpc\themes\rockies2.jpg" />
+    <Content Include="software\pocketpc\themes\rtstheme.jpg" />
+    <Content Include="software\pocketpc\themes\rtstheme2.jpg" />
+    <Content Include="software\pocketpc\themes\winter.jpg" />
+    <Content Include="software\pocketpc\themes\winter2.jpg" />
+    <Content Include="software\pocketpc\themes\yucca.jpg" />
+    <Content Include="software\pocketpc\themes\yucca2.jpg" />
+    <Content Include="software\pocketpc\themes\z3theme.jpg" />
+    <Content Include="software\pocketpc\themes\z3theme2.jpg" />
+    <Content Include="Scripts\infobox.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.pinable.js" />
+    <Content Include="Scripts\jquery.pinify.js" />
+    <Content Include="Scripts\jquery.pinify.min.js" />
+    <Content Include="Scripts\jquery.textshadow.js" />
+    <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Shane.Church\jquery.Blog.js" />
+    <Content Include="Scripts\Shane.Church\jquery.DynamicJumpList.js" />
+    <Content Include="Scripts\Shane.Church\jquery.GoogleMap.js" />
+    <Content Include="Scripts\Shane.Church\jquery.Modal.js" />
+    <Content Include="Scripts\Shane.Church\jquery.Navigation.js" />
+    <Content Include="Scripts\Shane.Church\jquery.PhotoAlbum.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shAutoloader.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushAppleScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushAS3.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushBash.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushColdFusion.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushCpp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushCSharp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushCss.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushDelphi.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushDiff.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushErlang.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushGroovy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushJava.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushJavaFX.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushJScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPerl.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPhp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPlain.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPowerShell.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushPython.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushRuby.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushSass.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushScala.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushSql.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushVb.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shBrushXml.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shCore.js" />
+    <Content Include="Scripts\SyntaxHighlighter\shLegacy.js" />
+    <Content Include="software\smartphone\clocksol\ClockSolLandscapeQVGA.jpg" />
+    <Content Include="software\smartphone\clocksol\ClockSolStandard.jpg" />
+    <Content Include="software\smartphone\fourcorners\FourCorners.jpg" />
+    <Content Include="software\smartphone\pyramid\PyramidScreenLandscapeQVGA.jpg" />
+    <Content Include="software\smartphone\pyramid\PyramidScreenStandard.jpg" />
+    <Content Include="software\smartphone\stirlingbirthday\StirlingBirthday.CAB" />
+    <Content Include="software\smartphone\stirlingbirthday\StirlingBirthdayHomeScreen.png" />
+    <Content Include="software\smartphone\stirlingbirthday\StirlingBirthdayMainScreen.png" />
+    <Content Include="software\smartphone\stirlingblog\StirlingBlog.SP.Upgrade.CAB" />
+    <Content Include="software\smartphone\stirlingblog\StirlingBlogCategories.jpg" />
+    <Content Include="software\smartphone\stirlingblog\StirlingBlogFeedback.jpg" />
+    <Content Include="software\smartphone\stirlingblog\StirlingBlogMain.jpg" />
+    <Content Include="software\smartphone\stirlingblog\StirlingBlogOptions.jpg" />
+    <Content Include="software\smartphone\stirlingweather\StirlingWeather.SP.CAB" />
+    <Content Include="software\smartphone\stirlingweather\StirlingWeatherLandscapeQVGA.jpg" />
+    <Content Include="software\smartphone\stirlingweather\StirlingWeatherStandard.jpg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Blog\Archive.cshtml" />
+    <Content Include="Views\Blog\BlogEntryUserControl.cshtml" />
+    <Content Include="Views\Blog\CommentUserControl.cshtml" />
+    <Content Include="Views\Blog\Entry.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
+    <Content Include="Views\Blog\NewCommentUserControl.cshtml" />
+    <Content Include="Views\Blog\Tag.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PhotoAlbum\Album.cshtml" />
+    <Content Include="Views\PhotoAlbum\Index.cshtml" />
+    <Content Include="Views\PhotoAlbum\View.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\ModalUserControl.cshtml" />
+    <Content Include="Views\Shared\PhotoUserControl.cshtml" />
+    <Content Include="Views\Shared\PhotoViewModal.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Software\MSPocketPC.cshtml" />
+    <Content Include="Views\Software\MSWindows.cshtml" />
+    <Content Include="Views\Software\Palm.cshtml" />
+    <Content Include="Views\Software\Win7Gadgets.cshtml" />
+    <Content Include="Views\Software\WindowsPhone.cshtml" />
+    <Content Include="Views\Software\WMPocketPC.cshtml" />
+    <Content Include="Views\Software\WMSmartphone.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="software\smartphone\stirlingweather\StirlingWeatherSetup.SP.msi" />
+    <Content Include="software\windows\basecampsync\BasecampPeopleSync.zip" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter.application" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0.application" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0\favicon.ico.deploy" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0\iTunesPlaylistConverter.exe.deploy" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0\iTunesPlaylistConverter.exe.manifest" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0\Parser.dll.deploy" />
+    <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0\WizardControl.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\App.ico.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\Interop.IWshRuntimeLibrary.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\RSS.NET.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\Shane.Church.Utility.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\StirlingWeatherLib.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\StirlingWeatherTray.application" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\StirlingWeatherTray.exe.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\StirlingWeatherTray.exe.manifest" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\StirlingWeatherTrayLauncher.exe.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\vbAccelerator.Components.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3133_0\WeatherGovLib.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\App.ico.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\Interop.IWshRuntimeLibrary.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\RSS.NET.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\Shane.Church.Utility.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\StirlingWeatherLib.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\StirlingWeatherTray.application" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\StirlingWeatherTray.exe.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\StirlingWeatherTray.exe.manifest" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\StirlingWeatherTrayLauncher.exe.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\vbAccelerator.Components.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\WeatherGovLib.dll.deploy" />
+    <Content Include="software\windows\stirlingweather\StirlingWeatherTray.application" />
+    <Content Include="software\windows\stirlingweather\StirlingWeatherTray_2_0_2900_0.application" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="software\gadgets\stirlingtraffic\" />
+    <Folder Include="software\pocketpc\javachess\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\ariblk-webfont.eot" />
+    <Content Include="Content\Fonts\ariblk-webfont.ttf" />
+    <Content Include="Content\Fonts\ariblk-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shane.Church.Cloud\Shane.Church.Web.Cloud.csproj">
+      <Project>{d4e190b0-06f9-41e4-823d-f3943d2ff091}</Project>
+      <Name>Shane.Church.Web.Cloud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shane.Church.Web.Common\Shane.Church.Web.Common.csproj">
+      <Project>{f7ea4cbc-0b50-4ff2-aae8-6c1c83bc66ae}</Project>
+      <Name>Shane.Church.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shane.Church.Web.Data.Azure\Shane.Church.Web.Cloud.Azure.csproj">
+      <Project>{f5603730-27d4-4ccc-bb7c-dab5b6575c78}</Project>
+      <Name>Shane.Church.Web.Cloud.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shane.Church.Web.Data\Shane.Church.Web.Data.csproj">
+      <Project>{3f700fc4-7009-4a99-8ac5-bdcede3ab31a}</Project>
+      <Name>Shane.Church.Web.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6072</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1846/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

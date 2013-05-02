@@ -1,0 +1,25 @@
+﻿@using Shane.Church.Web.Data.Models;
+@model JournalComments
+<div class="comment">
+	<span class="user">
+		@if (!String.IsNullOrEmpty(Model.Link))
+  {
+	  string link = Model.Link;
+	  if (!(link.StartsWith("http://") || link.StartsWith("https://")))
+	  {
+		  link = "http://" + link;
+	  }
+		<a href="@link">@Model.Username</a>
+  }
+  else
+  { 
+		@Model.Username
+  }
+	</span>
+	<span class="time">
+		<span>@Model.EntryDate.Value.ToShortDateString()</span><span>@Model.EntryDate.Value.ToShortTimeString()</span>
+	</span>
+	<span class="comment_text">
+		@Html.Raw(Model.Comments)
+	</span>
+</div>

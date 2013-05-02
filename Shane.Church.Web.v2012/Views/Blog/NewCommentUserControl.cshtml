@@ -1,0 +1,49 @@
+﻿@using Shane.Church.Web.v2012.Models.Blog;
+@using Shane.Church.Web.v2012.Helpers;
+@model NewCommentModel
+<div class="container-modal" id="modal-new-comment">
+	<div class="top">
+		<h3>New Comment</h3>
+		<div class="button-close"><a href="#" class="blank">Close</a></div>
+	</div>
+	<div class="modal-padding">
+		<div class="modal-content">
+			<div class="container-new-comment">
+				<div class="error new-comment-message"></div>
+				@using (Html.BeginForm("PostComment", "Blog", FormMethod.Post))
+				{
+					@Html.HiddenFor(m => m.ID)
+					<div>
+					@Html.LabelFor(m => m.UserName) *<br />
+					@Html.TextBoxFor(m => m.UserName)
+					@Html.ValidationMessageFor(m => m.UserName)
+					</div>
+					<div>
+					@Html.LabelFor(m => m.Email)&nbsp;(Not Displayed) *<br />
+					@Html.TextBoxFor(m => m.Email)
+					@Html.ValidationMessageFor(m => m.Email)
+					</div>
+					<div>
+					@Html.LabelFor(m => m.Link)<br />
+					@Html.TextBoxFor(m => m.Link)
+					@Html.ValidationMessageFor(m => m.Link)
+					</div>
+					<div>
+					@Html.LabelFor(m => m.Comments) *<br />
+					@Html.TextAreaFor(m => m.Comments)
+					@Html.ValidationMessageFor(m => m.Comments)
+					</div>
+					<div class="captcha">
+					@Html.Raw(Html.GenerateCaptcha())
+						<div class="clear">&nbsp;</div>
+					</div>
+					<input type="submit" name="submit" value="Submit" />
+				}
+			</div>
+			<a class="button button-new-comment-submit" href="#">OK</a>
+			<a class="button button-new-comment-cancel" href="#">Cancel</a>
+			<div class="clear">&nbsp;</div>
+		</div>
+	</div>
+	<div class="modal-bottom">&nbsp;</div>
+</div>

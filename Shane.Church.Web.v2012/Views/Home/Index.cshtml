@@ -1,0 +1,111 @@
+﻿@using Shane.Church.Web.v2012.Models
+@model Shane.Church.Web.v2012.Models.Home.IndexViewModel
+@{
+	ViewBag.Title = "Shane Church";
+	ViewBag.Header = "Shane Church";
+}
+@section Head {
+	<link rel="Alternate" type="application/rss+xml" title="Shane Church - Blog - RSS" href="@Url.Action("Blog", "Syndication")"/>
+	<link rel="Alternate" type="application/atom+xml" title="Shane Church - Blog - ATOM" href="@Url.Action("Blog", "Syndication", new { id = "Atom" })"/>
+	<link rel="Alternate" type="application/rss+xml" title="Shane Church - New Photos - RSS" href="@Url.Action("Photos", "Syndication")"/>
+	<link rel="Alternate" type="application/atom+xml" title="Shane Church - New Photos - ATOM" href="@Url.Action("Photos", "Syndication", new { id = "Atom" })"/>
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="@Url.Content("~/wlwmanifest.xml")" />
+}
+<h2>Latest Blog Entry</h2>
+<article class="blog_entry">
+	<h3><a href="@Url.Action("Entry", "Blog", new { id = Model.LatestBlogID })">@Html.Raw(Model.LatestBlogTitle)</a></h3>
+	<h4>@Model.LatestBlogDate&nbsp;@Model.LatestBlogTime</h4>
+	@if (Model.LatestBlogTags.Any())
+ { 
+	<div class="tags">
+		Tags:
+		<ul>
+			@foreach (string tag in Model.LatestBlogTags)
+   { 
+			<li>@Html.ActionLink(tag, "Tag", "Blog", new { id = tag }, new { })</li>
+   }
+		</ul>
+	</div>
+ }
+ 	<div class="entry">
+		@if (Model.LatestBlogHasImage)
+  { 
+		<img class="blog_image" src="@Url.Content("~/" + Model.LatestBlogImage)" alt="@Model.LatestBlogImageText" />
+  }
+		@Html.Raw(Model.LatestBlogEntry)
+	</div>
+	<div class="clear">&nbsp;</div>
+	<div class="entry_links">
+		<div class="entry_by">By: @Model.LatestBlogUser</div>
+		@if (Model.LatestBlogTruncated)
+  {
+		@Html.ActionLink("Continued", "Entry", "Blog", new { id = Model.LatestBlogID }, new { })
+  }
+		@Html.ActionLink("Blog", "Index", "Blog")
+	</div>
+</article>
+<h2>Latest Photos</h2>
+<div class="photos_container">
+	@foreach (PhotoViewModel p in Model.LatestPhotos)
+ { 
+@*	@Html.Partial("PhotoUserControl", p) *@
+	<a href="@Url.Action("View", "PhotoAlbum", new { id = p.ID })" class="blank photo-item">
+		<div class="tile">
+			<div class="tile-img">
+				<img src="@Url.Action("ResizedImage", "PhotoAlbum", new { id = p.ID, minSize = 135, square = true })" data-fullsize="@Url.Action("Image", "PhotoAlbum", new { id = p.ID })" alt="@p.Caption" />
+			</div>
+			<h4>@p.Caption</h4>
+			<h5>@p.UpdatedDate.ToShortDateString()</h5>
+			<h6>@p.CategoryName</h6>
+		</div>  
+	</a>	 
+ }
+	<div class="clear">&nbsp;</div>
+	<div class="entry_links">
+		@Html.ActionLink("Photo Album", "Index", "PhotoAlbum")
+	</div>
+</div>
+
+@section SideNav {
+<div class="syndication_links">
+	@Html.ActionLink("Blog - RSS", "Blog", "Syndication", new { }, new { })
+	@Html.ActionLink("Blog - ATOM", "Blog", "Syndication", new { id = "Atom" }, new { })
+	@Html.ActionLink("Photos - RSS", "Photos", "Syndication", new { }, new { })
+	@Html.ActionLink("Photos - ATOM", "Photos", "Syndication", new { id = "Atom" }, new { })
+</div>
+<div class="eui">
+	<a href="http://www.effectiveui.com" class="blank"><img src="@Url.Content("~/Content/images/EUI_logo_color.gif")" alt="EffectiveUI" /></a>
+</div>
+}
+@section SideNavPostContainer {
+<div class="html5">
+	<a href="http://www.w3.org/html/logo/" class="blank">
+		<img src="@Url.Content("~/Content/Images/html5-badge-h-css3-semantics.png")" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics" />
+	</a>
+</div>
+}
+@section PostFooter {
+	@Scripts.Render("~/bundles/shanechurch/modal")
+	@Scripts.Render("~/bundles/shanechurch/photoalbum")
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$(".photos_container a.photo-item").live("click", function () {
+				var $this = $(this);
+
+				var title = $this.find("h4").text();
+				if (!Modernizr.textshadow) {
+					title = $this.find("h4 span.ui-text-shadow-original").text();
+				}
+
+				$().PhotoAlbum("showPhoto", {
+					href: $this.attr("href"),
+					title: title,
+					category: $this.find("h6").text(),
+					file: $this.find("img").attr("data-fullsize")
+				});
+				return false;
+			});
+		});
+	</script>
+	@Html.Partial("PhotoViewModal")
+}

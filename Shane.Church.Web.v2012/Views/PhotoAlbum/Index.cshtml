@@ -1,0 +1,137 @@
+﻿@using Shane.Church.Web.v2012.Models.PhotoAlbum
+@model IndexViewModel
+@{
+	ViewBag.Title = "Shane Church - Photo Album";
+	ViewBag.Header = "Photo Album";
+}
+@section Head {
+	<link rel="Alternate" type="application/rss+xml" title="Shane Church - New Photos - RSS" href="@Url.Action("Photos", "Syndication")"/>
+	<link rel="Alternate" type="application/atom+xml" title="Shane Church - New Photos - ATOM" href="@Url.Action("Photos", "Syndication", new { id = "Atom" })"/>
+}
+@section SideNav {
+<div class="syndication_links">
+	@Html.ActionLink("Photos - RSS", "Photos", "Syndication", new { }, new { })
+	@Html.ActionLink("Photos - ATOM", "Photos", "Syndication", new { id = "Atom" }, new { })
+</div>
+<div class="photo_links">
+	<ul>
+		@foreach (PageItem pg in Model.Pages.OrderBy(m => m.DisplayName))
+  {
+	  if (pg.UpdatedDate > DateTime.Now.AddMonths(-1))
+	  { 
+		<li><span class="new">New - </span>@Html.ActionLink(pg.DisplayName, "Album", "PhotoAlbum", new { id = pg.ID }, new { })</li>
+	  }
+	  else
+	  { 
+		<li>@Html.ActionLink(pg.DisplayName, "Album", "PhotoAlbum", new { id = pg.ID }, new { })</li>	
+	  }
+  }
+	</ul>
+	<div class="clear">&nbsp;</div>
+</div>
+<select class="photo_links">
+	<option value="">Categories</option>
+		@foreach (PageItem pg in Model.Pages.OrderByDescending(m => m.UpdatedDate))
+  {
+	  if (pg.UpdatedDate > DateTime.Now.AddMonths(-1))
+	  { 
+		<option value="@Url.Action("Album", "PhotoAlbum", new { id = pg.ID })">New - @pg.DisplayName</option>
+	  }
+	  else
+	  { 
+		<option value="@Url.Action("Album", "PhotoAlbum", new { id = pg.ID })">@pg.DisplayName</option>
+	  }
+  }
+</select>
+}
+<div class="photo-nav">
+	<ul class="tabs">
+		<li class="first">
+			<a id="post-tab-1" href="#tab-1">Photos</a>
+		</li>
+		<li class="last">
+			<a id="post-tab-2" href="#tab-2" >Map</a>
+		</li>
+	</ul>
+</div>
+<div class="photo-panes">
+	<div class="tab-1" id="tab-1">
+		<div class="tile-container">
+				@foreach (PageItem pg in Model.Pages.OrderByDescending(m => m.UpdatedDate).Take(16))
+	{ 
+			<a href="@Url.Action("Album", "PhotoAlbum", new { id = pg.ID })" class="blank">
+				<div class="tile">
+					<div class="tile-img">
+						<img src="@Url.Action("CategoryImage", "PhotoAlbum", new { page = pg.ID, minSize = 135f, isSquare = true })" alt="@pg.DisplayName" />
+					</div>
+					<h4>@pg.DisplayName</h4>
+					<h5>@pg.Count</h5>
+				</div>  
+			</a>
+	}
+		  <div class="clear">&nbsp;</div>
+		</div>
+	</div>
+	<div class="tab-2" id="tab-2">
+		<div class="map_container">
+			<div id="map"></div>
+		</div>
+	</div>
+</div>
+@section PostFooter {
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+	@Scripts.Render("~/bundles/shanechurch/googlemap")
+	<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.tools.min.js")"></script>
+	<script type="text/javascript">
+		var mapInitialized = false;
+		$(document).ready(function () {
+			$("ul.tabs").tabs("div.photo-panes > div");
+
+			var tabApi = $("ul.tabs").data("tabs");
+			tabApi.click(0);
+			tabApi.onClick(function(e, index) {
+				if(index == 1 && mapInitialized == false) {					
+					$("#map").GoogleMap({
+						mapType: google.maps.MapTypeId.HYBRID,
+						callback: function (map) {
+
+							var pushpinIcon = '@Url.Content("~/Content/images/pushpin-purple.gif")';
+							var newPushpinIcon = '@Url.Content("~/Content/images/pushpin-green.gif")';
+
+							@{ DateTime newCutoff = DateTime.Now.AddMonths(-1); }
+							@{ foreach (PageItem pg in Model.Pages)
+		  {
+			  if (pg.UpdatedDate > newCutoff)
+			  {		
+							<text>$("#map").GoogleMap("addMarker", { 
+								id: "@pg.ID",
+								latitude: @pg.Latitude,
+								longitude: @pg.Longitude,
+								description: "@Html.Raw(pg.DisplayName)",
+								iconImageUrl: newPushpinIcon,
+								zIndex: 20,
+								infoWindowHtml: "<div class='content'><h3>@Html.Raw(pg.DisplayName)</h3></div>"
+							});</text>
+			  }
+			  else
+			  { 
+							<text>$("#map").GoogleMap("addMarker", { 
+								id: "@pg.ID",
+								latitude: @pg.Latitude,
+								longitude: @pg.Longitude,
+								description: "@Html.Raw(pg.DisplayName)",
+								iconImageUrl: pushpinIcon,
+								infoWindowHtml: "<div class='content'><h3><a href='@Url.Action("Album", "PhotoAlbum", new { id = pg.ID })' class='blank'>@Html.Raw(pg.DisplayName)</a></h3><div class='img_container'><a href='@Url.Action("Album", "PhotoAlbum", new { id = pg.ID })' class='blank'><img src='@Url.Action("CategoryImage", "PhotoAlbum", new { page = pg.ID })' alt='@Html.Raw(pg.DisplayName)' /></a></div></div>"
+							});</text>
+					   }
+				   }
+				   } 
+							$("#map").GoogleMap("zoomAll");
+						}
+					});
+					mapInitialized = true;
+				}
+			});
+		});
+	</script>
+}

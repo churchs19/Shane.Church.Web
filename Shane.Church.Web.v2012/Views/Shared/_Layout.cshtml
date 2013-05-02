@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link rel="Shortcut Icon" href="@Url.Content("~/Content/Images/favicon.ico")">
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="@Url.Action("Rsd", "XmlRpc")" />
+	@Styles.Render("~/Content/css")
+	<!--[if lte IE 8]> <link href="@Url.Content("~/Content/OldIE.css")" rel="stylesheet" type="text/css" /> <![endif]-->
+	@Scripts.Render("~/bundles/modernizr")
+	@RenderSection("Head", false)
+</head>
+<body>
+<!--[if lte IE 8]>
+	<div style=' clear: both;padding:0 0 0 0px; margin: 0px, 0px 0px 0px; position: relative;text-align:center'> 
+		<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode" class="blank">
+			<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." style="margin-bottom: -3px" />
+		</a>
+	</div>
+<![endif]-->
+	<div class="page">
+		<header>
+			<div id="title">
+				<div class="logo">&nbsp;</div>
+				<h1><span class="full-header">@ViewBag.Header</span><span class="short-header">@if (!string.IsNullOrEmpty(ViewBag.ShortHeader)) {@ViewBag.ShortHeader} else {@ViewBag.Header}</span></h1>
+			</div>
+		</header>
+		<nav>
+			<div class="mini-nav">
+				<select class="ssc_nav">
+					<option value="">Navigation</option>
+					<option value="@Url.Action("Index","Home")">Home</option>
+					<option value="@Url.Content("~/Resume.pdf")">Resume</option>
+					<option value="@Url.Action("Index", "Blog")">Blog</option>
+					<option value="@Url.Action("Index", "PhotoAlbum")">Photo Album</option>
+					<optgroup label="Software">
+						<option value="@Url.Action("WindowsPhone", "Software")">Windows Phone</option>
+						<option value="@Url.Action("Win7Gadgets", "Software")">Windows 7 Gadgets</option>
+						<option value="@Url.Action("WMSmartphone", "Software")">Windows Mobile Smartphone</option>
+						<option value="@Url.Action("WMPocketPC", "Software")">Windows Mobile Pocket PC</option>
+						<option value="@Url.Action("MSWindows", "Software")">Windows</option>
+						<option value="@Url.Action("MSPocketPC", "Software")">Pocket PC</option>
+						<option value="@Url.Action("Palm", "Software")">Palm OS</option>
+					</optgroup>
+				</select>
+			</div>
+			<ul class="ssc_nav">
+				<li>@Html.ActionLink("Home", "Index", "Home")</li>
+				<li><a href="@Url.Content("~/Resume.pdf")">Resume</a></li>
+				<li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+				<li>@Html.ActionLink("Photo Album", "Index", "PhotoAlbum")</li>
+				<li>
+					<a href="#">Software</a>
+					<div class="ssc_sub_nav">
+						@Html.ActionLink("Windows Phone", "WindowsPhone", "Software", new { }, new { id = 0 })
+						@Html.ActionLink("Windows 7 Gadgets", "Win7Gadgets", "Software", new { }, new { id = 0 })
+						@Html.ActionLink("Windows Mobile Smartphone", "WMSmartphone", "Software", new { }, new { id = 0 })
+						@Html.ActionLink("Windows Mobile Pocket PC", "WMPocketPC", "Software", new { }, new { id = 0 })
+						@Html.ActionLink("Windows", "MSWindows", "Software", new { }, new { id = 0 })
+						@Html.ActionLink("Pocket PC", "MSPocketPC", "Software", new { }, new { id = 0 })
+						@Html.ActionLink("Palm OS", "Palm", "Software", new { }, new { id = 0 })
+					</div>
+				</li>
+			</ul>
+		</nav>
+		<section id="main">
+			<div class="main_container">
+				@RenderBody()
+			</div>
+			<div class="clear">&nbsp;</div>
+			<aside>
+					<img src="@Url.Content("~/Content/Images/side_nav_photo.jpg")" alt="Shane Church, Andrea Love, and Ethan Love-Church" class="side_photo" />
+				<div class="container">
+					<h3>Contact</h3>
+					<a href="mailto:shane@s-church.net" class="logo_link">Email Me</a>
+					@RenderSection("SideNav", false)
+				</div>
+				@RenderSection("SideNavPostContainer", false)
+				<div class="clear">&nbsp;</div>
+			</aside>
+		</section>
+		<footer>
+			<div id="logindisplay">
+				@Html.Partial("_LogOnPartial")
+			</div>
+			Copyright &copy; Shane Church @DateTime.Now.Year.ToString()
+		</footer>
+	</div>
+<!--[if lte IE 9]>
+	<script src="@Url.Content("~/Scripts/PIE.js")" type="text/javascript"></script>
+<![endif]-->
+	@Scripts.Render("~/bundles/jquery")
+	<script type="text/javascript">
+		$(document).ready(function () {
+			if (window.PIE) {
+				$('#layout-header,textarea,input[type=text],input[type=password],button,a.button,#footer,.facets li,div.container-modal div.top').each(function () {
+					PIE.attach(this);
+				});
+			}
+
+			if (!Modernizr.textshadow) {
+				$("h1").textshadow();
+				$("h2").textshadow();
+				$("ul.ssc_nav li").textshadow();
+				$(".tile h4").textshadow();
+				$(".tile h5").textshadow();
+			}
+
+			$().Navigation();
+		});
+	</script>
+<!--[if gte IE 9]>
+	@Scripts.Render("~/bundles/pinify")
+	<script>
+		$(document).ready(function () {
+			$("head").pinify({
+				applicationName: 'Shane Church',
+				favIcon: '@Url.Content("~/Content/Images/favicon.ico")',
+				navColor: '#800080',
+				startUrl: 'http://@{@Request.Url.Authority}',
+				tooltip: 'Shane Church',
+				window: "width=1280;height=1024",
+				tasks: [{
+						'name': "Blog",
+						'action': '@{@Url.Action("Index", "Blog")}',
+						'icon': 'http://@{@Request.Url.Authority}' + '@Url.Content("~/Content/Images/favicon.ico")'
+					},
+					{
+						'name': "Photo Album",
+						'action': '@{@Url.Action("Index", "PhotoAlbum")}',
+						'icon': 'http://@{@Request.Url.Authority}' + '@Url.Content("~/Content/Images/favicon.ico")'
+					},
+					{
+						'name': "Resume",
+						'action': '@{@Url.Content("~/Resume.pdf")}',
+						'icon': 'http://@{@Request.Url.Authority}' + '@Url.Content("~/Content/Images/favicon.ico")'
+					},
+				]
+			});
+
+			$().DynamicJumpList({
+				feeds: [
+					{
+						jumpListTitle: 'Latest Blog Posts',
+						feedUrl: '@Url.Action("Blog", "Syndication")',
+						iconUrl: 'http://@{@Request.Url.Authority}' + '@Url.Content("~/Content/Images/favicon.ico")',
+						overlayIconUrl: 'http://@{@Request.Url.Authority}' + '@Url.Content("~/Content/Images/new_overlay.ico")',
+						overlayIconTooltip: 'New Blog Posts!'
+					}					
+				]
+			});
+		});
+	</script>
+<![endif]-->
+	@RenderSection("PostFooter", false)
+</body>
+</html>

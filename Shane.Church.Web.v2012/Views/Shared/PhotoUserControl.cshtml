@@ -1,0 +1,9 @@
+﻿@model Shane.Church.Web.v2012.Models.PhotoViewModel
+<article class="photo_item">
+	<div class="photo_image">
+		<a href="@Url.Action("View", "PhotoAlbum", new { id = Model.ID })" class="blank"><img src="@Url.Action("Image", "PhotoAlbum", new { id = Model.ID })" alt="@Model.Caption" /></a>
+	</div>
+	<h3><a href="@Url.Action("View", "PhotoAlbum", new { id = Model.ID })">@Model.Caption</a></h3>
+	<h4>@Model.CategoryName</h4>
+	<p>@Model.UpdatedDate.ToShortDateString()&nbsp;@Model.UpdatedDate.ToShortTimeString()</p>
+</article>

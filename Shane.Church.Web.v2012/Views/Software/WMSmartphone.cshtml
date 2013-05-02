@@ -1,0 +1,354 @@
+﻿@model Shane.Church.Web.v2012.Models.Software.SoftwareViewModel
+@{
+	ViewBag.Title = "Shane Church - Windows Mobile Smartphone Software";
+	ViewBag.Header = "Windows Mobile Smartphone";
+	ViewBag.ShortHeader = "WM Smartphone";
+}
+
+<div class="software-nav">
+	<ul class="tabs">
+		<li class="first">
+			<a id="post-tab-1" href="#tab-1" >Stirling Weather</a>
+		</li>
+		<li>
+			<a id="post-tab-2" href="#tab-2">Pyramid</a >
+		</li>
+		<li>
+			<a id="post-tab-3" href="#tab-3">Clock Solitaire</a>
+		</li>
+		<li>
+			<a id="post-tab-4" href="#tab-4">Four Corners</a>
+		</li>
+		<li>
+			<a id="post-tab-5" href="#tab-5">Stirling Blog</a>
+		</li>
+		<li class="last">
+			<a id="post-tab-6" href="#tab-6">Stirling Birthday</a>
+		</li>
+	</ul>
+	<div class="mini-tabs">
+		<select>
+			<option value="">Application</option>
+			<option value="1">Stirling Weather</option>
+			<option value="2">Pyramid</option>
+			<option value="3">Clock Solitaire</option>
+			<option value="4">Four Corners</option>
+			<option value="5">Stirling Blog</option>
+			<option value="6">Stirling Birthday</option>
+		</select>
+	</div>
+</div>
+<div class="panes">
+	<div class="pane tab-1" id="tab-1">
+		<h2><a href="@Url.Action("WMSmartphone", "Software", new { id = 1 })">Stirling Weather</a></h2>
+		<h3><a href="@Url.Content("~/software/pocketpc/stirlingweather/StirlingWeatherSetup.msi")">Download</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/smartphone/stirlingweather/StirlingWeatherLandscapeQVGA.jpg")" alt="Stirling Weather Screenshot - Current Conditions" />
+		<p>
+			December 23, 2008 - Stirling Weather 1.2.3279 contains a major rewrite of the application launching logic.  The application
+			now remembers the previously selected location on startup.  Startup performance is also significantly improved when more than
+			one location is available.  Stirling Weather now only retrieves updated data for the selected location on startup, refreshing 
+			other locations when they are selected.  The Update menu item still forces a refresh of all data.  This new version also
+			requires the .NET Compact Framework 3.5.
+		</p>
+		<p>
+			December 10, 2007 - Stirling Weather 1.0.2900 fixes an issue affecting locations like Alaska where the National
+			Weather Service returns a limited set of forecast data instead of the expected full set of descriptions and icons.
+		</p>
+		<p>
+			November 28, 2007 - Stirling Weather 1.0.2888 fixes an issue updating extended forecasts and adding new locations
+			that was created when the National Weather Service switched their servers to a third party caching service.
+		</p>
+		<p>
+			October 31, 2007 - Stirling Weather 1.0.2860 updates the 
+			application to use the latest version of the National Weather Service's NDFD web services.  This also allowed
+			me to remove the Yahoo Zip Code geocoding since the NDFD web service now performs that function.
+		</p>
+		<p>
+			October 15, 2007 - Stirling Weather 1.0.2844 is the first release of Stirling Weather for the Windows Mobile Smartphone.  This version supports 
+			all Windows Mobile 6 Standard and Windows Mobile 5 Smartphone devices.  For the Pocket PC/Touchscreen build, please go to my <a href="WindowsMobileSoftware.aspx?ID=0">Pocket PC Software page</a>.
+		</p>
+		<img class="imagefloatleft" src="@Url.Content("~/software/smartphone/stirlingweather/StirlingWeatherStandard.jpg")" alt="Stirling Weather Screenshot - Extended Forecast" />
+		<div style="width:99%;text-align:center">
+			<p>
+				<a href="@Url.Content("~/software/smartphone/stirlingweather/StirlingWeatherSetup.SP.msi")">
+					Install Stirling Weather 1.2 (Windows Installer - Windows Mobile 6.0 Standard)</a></p>
+			<p>
+				<a href="@Url.Content("~/software/smartphone/stirlingweather/StirlingWeather.SP.CAB")">
+					Install Stirling Weather 1.2 (Windows Mobile 6.0 Standard CAB)</a></p>
+			<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=shane%40s%2dchurch%2enet&no_shipping=1&no_note=1&tax=0&currency_code=USD&bn=PP%2dDonationsBF&charset=UTF%2d8" class="blank"><img class="borderlessimage" src="https://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" alt="Donate via Paypal" /></a></p>
+			<p>Requires: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e3821449-3c6b-42f1-9fd9-0041345b3385&displaylang=en">Microsoft .NET Compact Framework 3.5</a>
+				<br />
+				and
+				<br />
+				<a href="@Url.Content("~/software/pocketpc/NETCFv35.Messages.EN.wm.cab")">Microsoft System String Resources 3.5</a>
+			</p>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-2" id="#tab-2">
+		<h2><a href="@Url.Action("WMSmartphone", "Software", new { id = 2 })">Pyramid</a></h2>
+		<h3><!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=14848">--><a href="http://www.mobihand.com/product.asp?id=14848">Purchase</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/smartphone/pyramid/PyramidScreenLandscapeQVGA.jpg")" alt="Pyramid Screenshot" />
+		<p>
+			Pyramid is the classic game of pyramid solitaire. The goal of the game is to remove all of the cards from the tableau (pyramid).
+		</p>
+		<p>
+			March 20, 2008 - Pyramid 1.1.3001 is a minor bugfix release that fixes an issue where a covered king could be removed if the card
+			covering it was selected.
+		</p>
+		<p>
+			October 15, 2007 - Pyramid 1.0.2827 is the first build of Pyramid to support Windows Mobile Smartphones.  This version supports 
+			all Windows Mobile 6 Standard and Windows Mobile 5 Smartphone devices.  For the Pocket PC/Touchscreen build, please go to my <a href="WindowsMobileSoftware.aspx?ID=1">Pocket PC Software page</a>.
+		</p>
+		<img class="imagefloatleft" src="@Url.Content("~/software/smartphone/pyramid/PyramidScreenStandard.jpg")" alt="Pyramid Standard Screen" />
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>Pyramid 2.0 is available through MobiHand for $0.99.</p>
+		<div style="width:99%;text-align:center">
+			<h3><!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=14848">--><a href="http://www.mobihand.com/product.asp?id=14848">Purchase Pyramid</a></h3>
+			<p>Requires: <a href="http://www.microsoft.com/downloads/details.aspx?familyid=9655156b-356b-4a2c-857c-e62f50ae9a55">Microsoft .NET Compact Framework 2.0</a></p>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-3" id="tab-3">
+		<h2><a href="@Url.Action("WMSmartphone", "Software", new { id = 3 })">Clock Solitaire</a></h2>
+		<!--            <h3><a href="https://www.mobihand.com/cart1.asp?posid=250&pid=14849">Purchase</a></h3> -->
+		<h3><a href="http://www.mobihand.com/product.asp?id=14849">Purchase</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/smartphone/clocksol/ClockSolLandscapeQVGA.jpg")" alt="Clock Solitaire Screenshot" />
+		<p>
+			Clock Solitaire is a fun and addictive solitaire game
+			where all of the cards are dealt into 13 piles of 4 cards each. Twelve of the piles
+			are arranged in the pattern of a clock, with the thirteenth pile in the center.
+			The top card of the center pile is turned up to start the game. To play a card,
+			place it on the pile that represents its value on the clock face. Kings are played
+			on the center pile. Once a card is played on its correct pile, the top card of that
+			pile is turned over. Play continues by placing the new card on its proper pile.
+			The game ends when all 52 cards have been correctly placed, or all four Kings have
+			been played. If all 52 cards were correctly placed, the game will continue to a
+			new round with your score carrying over.
+		</p>
+		<img class="imagefloatleft" src="@Url.Content("~/software/smartphone/clocksol/ClockSolStandard.jpg")" alt="Clock Solitaire" />
+		<p>
+			October 15, 2007 - Clock Solitaire 1.0.2827 is the first build of Pyramid to support Windows Mobile Smartphones.  This version supports 
+			all Windows Mobile 6 Standard and Windows Mobile 5 Smartphone devices.  For the Pocket PC/Touchscreen build, please go to my <a href="WindowsMobileSoftware.aspx?ID=2">Pocket PC Software page</a>.
+		</p>
+		<p>Clock Solitaire 2.0 is available through MobiHand for $0.99</p>
+		<div style="width:99%;text-align:center">
+			<h3><!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=14849">--><a href="http://www.mobihand.com/product.asp?id=14849">Purchase Clock Solitaire</a></h3>
+			<p>Requires: <a href="http://www.microsoft.com/downloads/details.aspx?familyid=9655156b-356b-4a2c-857c-e62f50ae9a55">Microsoft .NET Compact Framework 2.0</a></p>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-4" id="tab-4">
+		<h2><a href="@Url.Action("WMSmartphone", "Software", new { id = 4 })">Four Corners</a></h2>
+		<h3><!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=20611">--><a href="http://www.mobihand.com/product.asp?id=20611">Purchase</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/smartphone/fourcorners/FourCorners.jpg")" alt="Four Corners Screenshot"/>
+		<p>
+			Four Corners is the classic game of "Four Seasons," "Corner
+			Card," or "Vanishing Cross" for the Windows Mobile Smartphone.
+		</p>
+		<p>
+			The foundations are the four corners of the board. The tableau is the cross formed
+			in the center of the board. The stock is the pile on the bottom left and the wastepile
+			is the pile to the right of the stock. The game is dealt by placing five cards into
+			the tableau, one in each pile. A sixth card is placed in the bottom left foundation.
+			All remaining cards are placed in the stock.
+		</p>
+		<p>
+			The first foundation card forms the basis of all the other foundations. That is,
+			the rank of the first foundation card is the starting rank of the other foundations.
+			Each foundation is built up in suit until it contains thirteen cards, wrapping around
+			from king to ace as necessary. The tableau cards are available for play at any time,
+			and may be moved (one card at a time) to the foundations or to another tableau pile.
+			The tableau piles may be built down in rank, regardless of suit.
+		</p>
+		<p>
+			The cards in the stock are available for play to the foundations, the tableau, or
+			to the wastepile. The wastepile is used as a sort of temporary holding area for
+			cards that have no other home. The top card of the wastepile may be moved to either
+			the foundations or tableau.
+		</p>
+		<p>
+			The object of the game is to complete the four foundations.
+		</p>
+		<p>
+			Four Corners is available through MobiHand for $0.99
+		</p>
+		<div style="width:99%;text-align:center">
+			<h3><!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=20611">--><a href="http://www.mobihand.com/product.asp?id=20611">Purchase Four Corners</a></h3>
+			<p>Requires: <a href="http://www.microsoft.com/downloads/details.aspx?familyid=E3821449-3C6B-42F1-9FD9-0041345B3385">Microsoft .NET Compact Framework 3.5</a></p>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-5" id="tab-5">
+		<h2><a href="@Url.Action("WMSmartphone", "Software", new { id = 5 })">Stirling Blog</a></h2>
+		<h3><!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=32259">--><a href="http://www.mobihand.com/product.asp?id=32259">Purchase</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/smartphone/stirlingblog/StirlingBlogMain.jpg")" alt="Stirling Blog Main Screen" />
+		<p>
+			June 26, 2009 - Stirling Blog 1.0.3464 is the first commercial release of Stirling Blog.  This release
+			contains some minor bug fix improvements to the final beta.  Stirling Blog is available at Mobihand for $10.
+			Until August 21st, Stirling Blog will be available for a promotional price of $5.
+		</p>
+		<p>
+			March 18, 2009 - Stirling Blog 1.0.3363 BETA adds the ability to easily add a hyperlink to a post.
+		</p>
+		<p>
+			January 30, 2009 - Stirling Blog 1.0.3317 BETA is the first public beta release 
+			of Stirling Blog.  Stirling Blog is a MetaWeblog API client and will work with any blog software that
+			supports the MetaWeblog API (Blogger, Windows Live Spaces, etc.).  The initial beta release of 
+			Stirling Blog supports uploading photos from the phone's camera or from a file on the phone, post categories,
+			and setting the post time.
+		</p>
+		<p>
+			<img class="imagefloatleft" src="@Url.Content("~/software/smartphone/stirlingblog/StirlingBlogOptions.jpg")" alt="Stirling Blog Options" />
+			The first screen you will see when you launch Stirling Blog is the Options screen.  Here you must set the 
+			MetaWeblog API url, your blog username, and your blog password to continue into Stirling Blog.  The Image
+			CSS field is used to allow you to specify custom CSS styling for the images added to your post in Stirling Blog.
+			The other option on this page is an option to link to the original uploaded image.  In this beta release, Stirling
+			Blog defaults the maximum width of the image in the post to 350 pixels wide, but can link to the original image if 
+			the original is larger.
+		</p>
+		<p>
+		<img alt="Stirling Blog Main Screen" class="imagefloat" 
+			src="@Url.Content("~/software/smartphone/stirlingblog/StirlingBlogMain.jpg")" /> Once all of 
+		the required options have been filled out, the next screen you will see is the 
+		main Stirling Blog screen. On the main screen, the menu items as as follows:
+		</p>
+		<br />
+		<div class="softwaremenulist">
+		<ol>
+			<li>Post - Submits the completed post to the blog.  Both the Title and Post fields are required</li>
+			<li>Menu
+				<ol>
+					<li>New Post - Clears the Title and Post fields and resets the post date to the current system date.</li>
+					<li>Add Picture
+						<ol>
+							<li>File - Adds a picture to the post from a file on the phone.</li>
+							<li>Camera - Opens the phone's camera to capture a new picture into the post.</li>
+						</ol>                            
+					</li>
+					<li>Post Categories - Launches the Post Categories dialog described below.</li>
+					<li>Set Post Time - If checked, this item displays the Post Time field and uses the value there for 
+						the post time.  If unchecked, the Post Time field will be hidden and the post time will be set to 
+						the current system time.
+					</li>
+					<li>Options - Displays the Options dialog described above.</li>
+					<li>Check for Update - Checks for an update to the Stirling Blog software and gives an option to update as appropriate.</li>
+					<li>Send Feedback - Send me feedback or comments on the Stirling Blog beta using the dialog described below.</li>
+					<li>About - About Stirling Blog</li>
+					<li>Exit - Closes Stirling Blog</li>
+				</ol>
+			</li>
+		</ol>
+		</div>
+		<br />
+		<p>
+		The Title and Post are both required.  Adding an image to the post will add a "[imgX]" to the post where X is the number for
+		the image.  This is a placeholder for the image and ,by default, this will be added at the current character position in the 
+		Post field.  You may move this as you desire, but do not delete it or your image will not appear in your post.
+		</p>
+		<br />
+		<p>
+			<img alt="Stirling Blog Categories" class="imagefloatleft" 
+				src="@Url.Content("~/software/smartphone/stirlingblog/StirlingBlogCategories.jpg")" /> The 
+			Post Categories dialog is used to set the categories for the post. This dialog 
+			will get a selectable list of available categories from the blog and will also 
+			give you the option to add new categories. Under the Menu item, the Add button 
+			will focus the Add Category text box. Clicking the center button or hitting the 
+			Add menu item again will add that new category to the list and select it. Click 
+			done to apply the selected categories to the current post.
+		</p>
+		<p>
+			<img alt="Stirling Blog Feedback" class="imagefloat" 
+				src="@Url.Content("~/software/smartphone/stirlingblog/StirlingBlogFeedback.jpg")" /> The Send 
+			Feedback form allows you to send me feedback on Stirling Blog directly from your 
+			phone. A valid email address is required so that I may communicate with you 
+			regarding any issues or suggestions that you may have.
+		</p>
+		<div style="width:99%;text-align:center">
+			<p>Stirling Blog 1.0 is available through MobiHand for $5.00</p>
+			<p>
+				<!--<a href="https://www.mobihand.com/cart1.asp?posid=250&pid=32259">--><a href="http://www.mobihand.com/product.asp?id=32259">Purchase Stirling 
+				Blog 1.0</a></p>
+			<p>
+				Requires:
+				<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e3821449-3c6b-42f1-9fd9-0041345b3385&amp;displaylang=en">
+				Microsoft .NET Compact Framework 3.5</a>
+				<br />
+				and
+				<br />
+				<a href="@Url.Content("~/software/pocketpc/NETCFv35.Messages.EN.wm.cab")">Microsoft System String 
+				Resources 3.5</a>
+			</p>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-6" id="tab-6">
+		<h2><a href="@Url.Action("WMSmartphone", "Software", new { id = 6 })">Stirling Birthday</a></h2>
+		<h3><a href="@Url.Content("~/software/smartphone/stirlingbirthday/StirlingBirthday.CAB")">Download</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/smartphone/stirlingbirthday/StirlingBirthdayMainScreen.png")" alt="Stirling Birthday Main Screen" />
+		<p>
+			April 12, 2012 - Stirling Birthday 1.0.4485 is an update to default the right softkey to send a 
+			text message to the selected contact if a mobile phone number is available.  If no mobile phone number
+			is available, the right softkey will dial the home phone number of the selected contact.  The action key
+			will dial either the mobile or home phone number of the selected contact.
+		</p>
+		<p>
+			March 12, 2012 - Stirling Birthday 1.0.4454 is a minor update to correct an issue with the
+			calculation of the number of days until an event during a leap year.
+		</p>
+		<p>
+			June 25th, 2009 - Stirling Birthday 1.0.3463 is the first public release 
+			of Stirling Birthday.  Stirling Birthday is an app that displays all of the birthday and
+			anniversary records in the contacts on a Windows Mobile 6 Standard or higher smartphone.
+			The default view is to show all upcoming birthdays and anniversaries for the next thirty 
+			days.  Stirling Birthday can also show all of the birthdays and anniversaries for the 
+			entire year.
+		</p>
+		<p>
+			<img class="imagefloatleft" src="@Url.Content("~/software/smartphone/stirlingbirthday/StirlingBirthdayHomeScreen.png")" alt="Stirling Birthday Home Screen Plugin" />
+			Stirling Birthday also provides a home screen plugin for the Windows Mobile 6.1 Sliding
+			Panels home screen.  There is an option to have the home screen plugin update once per 
+			day at 1 am local time.  The home screen plugin option will only be available on 
+			Windows Mobile 6.1 Standard with the Sliding Panels (CHome) home screen installed.  
+			By default, the home screen plugin will install at the bottom of the home screen.  The order can 
+			be changed using a program like CHome Config.  If you choose to uninstall the application, 
+			uncheck the Auto Update Home Screen and Show Home Screen Plugin options in the application
+			before uninstalling.
+		</p>
+		<div style="width:99%;text-align:center">
+			<p>
+				<a href="@Url.Content("~/software/smartphone/stirlingbirthday/StirlingBirthday.CAB")">Install Stirling 
+				Birthday 1.0 (Windows Mobile 6.0 Standard CAB)</a></p>
+			<p>
+				<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&amp;business=shane%40s%2dchurch%2enet&amp;no_shipping=1&amp;no_note=1&amp;tax=0&amp;currency_code=USD&amp;bn=PP%2dDonationsBF&amp;charset=UTF%2d8" class="blank">
+				<img alt="Donate via Paypal" class="borderlessimage" 
+					src="https://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" /></a></p>
+			<p>
+				Requires:
+				<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e3821449-3c6b-42f1-9fd9-0041345b3385&amp;displaylang=en">
+				Microsoft .NET Compact Framework 3.5</a>
+				<br />
+				and
+				<br />
+				<a href="@Url.Content("~/software/pocketpc/NETCFv35.Messages.EN.wm.cab")">Microsoft System String 
+				Resources 3.5</a>
+			</p>
+			<p>
+				Home Screen Plugin requires Windows Mobile 6.1 Sliding Panels.
+			</p>
+		</div>            
+		<div class="clear">&nbsp;</div>
+	</div>
+</div>
+@section PostFooter {
+	<script src="@Url.Content("~/Scripts/jquery.tools.min.js")" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$().Navigation("initTabs", {
+				selectedIndex: @Model.Id
+			});
+		});
+	</script>
+}

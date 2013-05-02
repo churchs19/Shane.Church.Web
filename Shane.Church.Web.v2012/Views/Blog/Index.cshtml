@@ -1,0 +1,75 @@
+﻿@using Shane.Church.Web.Data.Models;
+@using Shane.Church.Web.v2012.Models.Blog;
+@model Shane.Church.Web.v2012.Models.Blog.PageViewModel
+@{
+	ViewBag.Title = "Shane Church - Blog";
+	ViewBag.Header = "Blog";
+}
+@section Head {
+	@Styles.Render("~/Content/syntaxhighlighter")
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="@Url.Content("~/wlwmanifest.xml")" />
+}
+@section SideNav {
+<div class="syndication_links">
+	@Html.ActionLink("Blog - RSS", "Blog", "Syndication", new { }, new { })
+	@Html.ActionLink("Blog - ATOM", "Blog", "Syndication", new { id = "Atom" }, new { })
+</div>
+@if (Model.TagCloud != null && Model.TagCloud.Any())
+{ 
+<h3>Tags</h3>
+<ul class="tagCloud">
+	@foreach(TagCloudItem item in Model.TagCloud)
+ {
+	<li class="tagCloud-tag tagCloud-@item.Weight">@Html.ActionLink(item.Tag, "Tag", "Blog", new { id = item.Tag }, new { } )</li>
+ }
+</ul>
+<select class="tagCloud">
+	<option value="">Tags</option>
+	@foreach(TagCloudItem item in Model.TagCloud)
+ {
+	<option value="@Url.Action("Tag", "Blog", new { id = item.Tag })">@item.Tag</option>
+ }
+</select>
+}
+<h3>Archive</h3>
+<div class="archive_links">
+	<ul class="archive_links">
+		@foreach (ArchiveLinkModel archive in Model.ArchiveLinks)
+  { 
+		<li>@Html.ActionLink(archive.MonthName+" "+archive.Year.ToString(), "Archive", "Blog", new { year = archive.Year, month = archive.Month }, new { })</li>
+  }
+	</ul>
+</div>
+<select class="archive_links">
+	<option>Archive</option>
+		@foreach (ArchiveLinkModel archive in Model.ArchiveLinks)
+  { 
+		<option value="@Url.Action("Archive", "Blog", new { year = archive.Year, month = archive.Month })">@(archive.MonthName+" "+archive.Year.ToString())</option>
+  }
+</select>
+}
+@foreach (EntryViewModel entry in Model.Entries)
+{ 
+	@Html.Partial("BlogEntryUserControl", entry)
+}
+@section PostFooter {
+@Html.Partial("ModalUserControl")
+@Html.Partial("NewCommentUserControl", new NewCommentModel())
+@Scripts.Render("~/bundles/jqueryval")
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shCore.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shBrushXml.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shBrushCSharp.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shBrushCss.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shBrushSql.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shBrushJScript.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/SyntaxHighlighter/shBrushPlain.js")" type="text/javascript"></script>
+@Scripts.Render("~/bundles/shanechurch/modal")
+@Scripts.Render("~/bundles/shanechurch/blog")
+<script type="text/javascript">
+	var syntaxHighlighterUrlBase = '@Url.Content("~/Scripts/SyntaxHighlighter/")';
+	$(document).ready(function () {
+		$().Blog();
+		//$.cookie('last_read_' + document.domain, (new Date()).getTime().toString(), { expires: 7 });
+	});
+</script>
+}

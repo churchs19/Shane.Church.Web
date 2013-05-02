@@ -1,0 +1,100 @@
+﻿@model Shane.Church.Web.v2012.Models.Software.SoftwareViewModel
+@{
+	ViewBag.Title = "Shane Church - Pocket PC Software";
+	ViewBag.Header = "Pocket PC";
+}
+
+<div class="software-nav">
+	<ul class="tabs">
+		<li class="first">
+			<a id="post-tab-1" href="#tab-1" >Currency Converter</a>
+		</li>
+		<li>
+			<a id="post-tab-2" href="#tab-2">Chess</a >
+		</li>
+		<li class="last">
+			<a id="post-tab-3" href="#tab-3">Langton's Ant</a>
+		</li>
+	</ul>
+	<div class="mini-tabs">
+		<select>
+			<option value="">Application</option>
+			<option value="1">Currency Converter</option>
+			<option value="2">Chess</option>
+			<option value="3">Langton's Ant</option>
+		</select>
+	</div>
+</div>
+<div class="panes">
+	<div class="pane tab-1" id="tab-1">
+		<h2><a href="@Url.Action("MSPocketPC", "Software", new { id = 1 })">Currency Converter<a href="@Url.Action("MSPocketPC", "Software", new { id = 1 })"></h2>
+		<h3><a href="@Url.Content("~/software/pocketpc/currency/CurrencyConverter_PPC.ARM.CAB")">Download</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/pocketpc/currency/CurrencyScreen.gif")" alt="Currency Converter Screenshot" />
+		<p>
+			I wanted to figure out how to use web services on the Pocket PC 
+			and my recent trip to Canada provided me the motivation to write a currency 
+			converter. The currency converter uses a webservice provided by <a href="http://www.xmethods.net">
+			xmethods.net</a> to download the conversion rates. Once downloaded, the 
+			rates are then cached for times when the device does not have an active 
+			internet connection.
+		</p>
+		<p>December 30, 2005 - Currency Converter has been replaced by Currency Converter 2005 for Windows Mobile 5 devices.
+			Currency Converter 1.0 will be the last release for Pocket PC 2003 and below.
+		</p>
+		<div style="width:99%;text-align:center">
+			<p><a href="@Url.Content("~/software/pocketpc/currency/CurrencyConverter_PPC.ARM.CAB")">Download Currency 
+					Converter</a></p>
+			<p>Requires: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=a5a02311-194b-4c00-b445-f92bec03032f&DisplayLang=en">
+					.NET Compact Framework Redistributable</a>
+			</p>
+			<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=shane%40s%2dchurch%2enet&no_shipping=1&no_note=1&tax=0&currency_code=USD&bn=PP%2dDonationsBF&charset=UTF%2d8" class="blank"><img class="borderlessimage" src="https://www.paypal.com/en_US/i/btn/x-click-butcc-donate.gif" alt="Donate via Paypal" /></a>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-2" id="tab-2">
+		<h2><a href="@Url.Action("MSPocketPC", "Software", new { id = 2 })">Chess</a></h2>
+		<img class="imagefloat" src="@Url.Content("~/software/pocketpc/netchess/chessscreen.jpg")" alt="Chess Screenshot" />
+		<p>
+			Another project I have worked on is a chess game using Visual 
+			Studio.NET, C#, and the .NET Compact Framework. It currently supports Human vs. 
+			Human play or Human vs. Computer. The computer player uses a NegaMax search 
+			algorithm with alpha-beta pruning. It is still pretty slow, but it is getting 
+			progressively faster and smarter.
+		</p>
+		<div style="width:99%;text-align:center">
+			&nbsp;
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+	<div class="pane tab-3" id="tab-3">
+		<h2><a href="@Url.Action("MSPocketPC", "Software", new { id = 3 })">Langton's Ant</a></h2>
+		<h3><a href="@Url.Content("~/software/pocketpc/langtons/LangtonsAnt.zip")">Download</a></h3>
+		<img class="imagefloat" src="@Url.Content("~/software/pocketpc/langtons/langtons.png")" alt="Langton's Ant Screenshot" />
+		<p>
+			I wanted to play with the drawing functions in the .NET 
+			Framework so I wrote a Langton's Ant program in C# using Beta 1 of the .NET 
+			Compact Framework. Langton's Ant is a simple cellular automaton that produces 
+			an interesting pattern after a period of seemingly random movement. More info 
+			on the algorithm can be found <a href="http://www.wikipedia.org/wiki/Langton's_ant">
+				here</a>.
+		</p>
+		<div style="width:99%;text-align:center">
+			<p><a href="@Url.Content("~/software/pocketpc/langtons/LangtonsAnt.zip")">Download Langton's Ant</a></p>
+			<p>Requires: <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=a5a02311-194b-4c00-b445-f92bec03032f&DisplayLang=en">
+					.NET Compact Framework Redistributable</a>
+			</p>
+		</div>
+		<div class="clear">&nbsp;</div>
+	</div>
+</div>
+
+@section PostFooter {
+	<script src="@Url.Content("~/Scripts/jquery.tools.min.js")" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$().Navigation("initTabs", {
+				selectedIndex: @Model.Id
+			});
+		});
+	</script>
+}

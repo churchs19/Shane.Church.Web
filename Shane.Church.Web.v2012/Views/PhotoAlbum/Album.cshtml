@@ -1,0 +1,93 @@
+﻿@using Shane.Church.Web.v2012.Models
+@using Shane.Church.Web.v2012.Models.PhotoAlbum
+@model AlbumViewModel
+@{
+	ViewBag.Title = "Shane Church - Photo Album - " + Model.DisplayName;
+	ViewBag.Header = "Photo Album";
+}
+@section Head {
+	<link rel="Alternate" type="application/rss+xml" title="Shane Church - Photo Album - @Model.DisplayName - RSS" href="@Url.Action("Photos", "Syndication", new { categoryId = Model.ID })"/>
+	<link rel="Alternate" type="application/atom+xml" title="Shane Church - Photo Album - @Model.DisplayName - ATOM" href="@Url.Action("Photos", "Syndication", new { id = "Atom", categoryId = Model.ID })"/>
+}
+@section SideNav {
+<div class="syndication_links">
+	@Html.ActionLink(Model.DisplayName + " - RSS", "Photos", "Syndication", new { categoryId = Model.ID }, new { })
+	@Html.ActionLink(Model.DisplayName + " - ATOM", "Photos", "Syndication", new { id = "Atom", categoryId = Model.ID }, new { })
+</div>
+}
+<h2>@Model.Title</h2>
+<div class="photos_container">
+	@foreach (PhotoViewModel p in Model.Photos)
+ { 
+	@Html.Partial("PhotoUserControl", p)
+ }
+ <div class="clear">&nbsp;</div>
+</div>
+<div class="pager">
+	<span class="first">
+	@if(Model.PageNumber != 0)
+	{
+		<text>
+	@Html.ActionLink("First", "Album", "PhotoAlbum", new { id = Model.ID, pageNumber = 0 }, new { @class = "prev_link" })
+		</text>
+	}
+	</span>
+	<span class="previous">
+	@if(Model.PageNumber != 0)
+	{
+		<text>
+	@Html.ActionLink("Previous", "Album", "PhotoAlbum", new { id = Model.ID, pageNumber = Model.PageNumber - 1 }, new { @class = "prev_link" })
+		</text>
+	}
+	</span>
+	<span class="count">
+		Photos @((Model.PageNumber * Model.PageSize) + 1) - @((Model.PageNumber * Model.PageSize) + Model.Photos.Count()) of @Model.TotalPhotos
+	</span>
+	<span class="next">
+	@if(Model.PageNumber != Model.LastPageNumber)
+	{
+		<text>
+	@Html.ActionLink("Next", "Album", "PhotoAlbum", new { id = Model.ID, pageNumber = Model.PageNumber + 1 }, new { @class = "next_link" })
+		</text>
+	}
+	</span>
+	<span class="last">
+	@if(Model.PageNumber != Model.LastPageNumber)
+	{
+		<text>
+	@Html.ActionLink("Last", "Album", "PhotoAlbum", new { id = Model.ID, pageNumber = Model.LastPageNumber }, new { @class = "next_link" })
+		</text>
+	}
+	</span>
+</div>
+@section PostFooter {
+	@Scripts.Render("~/bundles/shanechurch/modal")
+	@Scripts.Render("~/bundles/shanechurch/photoalbum")
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("a.prev_link").live("click", function () {
+				$().PhotoAlbum("loadPage", { href: $(this).attr("href") });
+				return false;
+			});
+
+			$("a.next_link").live("click", function () {
+				$().PhotoAlbum("loadPage", { href: $(this).attr("href") });
+				return false;
+			});
+
+			$(".photo_item a").live("click", function () {
+				var $this = $(this);
+				var $parent = $this.parents("article.photo_item");
+
+				$().PhotoAlbum("showPhoto", {
+					href: $(this).attr("href"),
+					title: $parent.find("h3").text(),
+					category: $parent.find("h4").text(),
+					file: $parent.find("img").attr("src") 
+				});
+				return false;
+			});
+		});
+	</script>
+	@Html.Partial("PhotoViewModal")
+}

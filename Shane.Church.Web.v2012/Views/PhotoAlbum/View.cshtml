@@ -1,0 +1,15 @@
+﻿@using Shane.Church.Web.v2012.Models
+@model PhotoViewModel
+@{
+	ViewBag.Title = "Shane Church - Photo Album";
+	ViewBag.Header = "Photo Album";
+}
+<article class="view_photo_item">
+	<div class="photo_image">
+		<img src="@Url.Action("Image", "PhotoAlbum", new { id = Model.ID })" alt="@Model.Caption" />
+	</div>
+	<h3>@Model.Caption</h3>
+	<h4>@Model.CategoryName</h4>
+	<p>@Model.UpdatedDate.ToShortDateString()&nbsp;@Model.UpdatedDate.ToShortTimeString()</p>
+	<p>@Html.ActionLink("Back to Album", "Album", "PhotoAlbum", new { id = Model.CategoryID }, new { })</p>
+</article>
