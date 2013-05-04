@@ -181,6 +181,11 @@ namespace Shane.Church.Web.v2012
 				"StirlingMoney",
 				"StirlingMoney/WindowsPhone",
 				new { controller = "Software", action = "WindowsPhone", id = 1 });
+
+			routes.MapRoute(
+				"WhatIEatWP",
+				"WhatIEat/WindowsPhone",
+				new { controller = "Software", action = "WindowsPhone", id = 2 });
 			#endregion
 
 			//End Software Routes

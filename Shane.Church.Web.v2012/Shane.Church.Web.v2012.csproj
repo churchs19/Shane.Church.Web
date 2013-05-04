@@ -299,6 +299,12 @@
     <Content Include="software\windowsphone\stirlingmoney\ScreenshotSplash.png" />
     <Content Include="software\windowsphone\stirlingmoney\ScreenshotTransactions.png" />
     <Content Include="software\windowsphone\stirlingmoney\ScreenshotTransactionsEditDelete.png" />
+    <Content Include="software\windowsphone\whatieat\0.png" />
+    <Content Include="software\windowsphone\whatieat\1.png" />
+    <Content Include="software\windowsphone\whatieat\2.png" />
+    <Content Include="software\windowsphone\whatieat\3.png" />
+    <Content Include="software\windowsphone\whatieat\4.png" />
+    <Content Include="software\windowsphone\whatieat\AppIcon.png" />
     <Content Include="software\windows\basecampsync\BasecampSync.png" />
     <Content Include="software\windows\basecampsync\BasecampSyncProgress.png" />
     <Content Include="software\windows\basecampsync\BasecampSyncRibbon.png" />
