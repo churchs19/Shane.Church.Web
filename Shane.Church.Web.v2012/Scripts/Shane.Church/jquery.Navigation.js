@@ -56,8 +56,8 @@
 
 			$("ul.tabs").tabs("div.panes > div");
 
-			if (opts.selectedIndex > 1) {
-				$("ul.tabs").data("tabs").click(opts.selectedIndex);
+			if (opts.selectedIndex >= 1) {
+				$("ul.tabs").data("tabs").click(opts.selectedIndex - 1);
 			}
 
 			$(".mini-tabs select").change(function () {

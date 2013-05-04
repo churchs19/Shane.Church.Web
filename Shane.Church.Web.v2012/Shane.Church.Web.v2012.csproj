@@ -321,7 +321,6 @@
     <Content Include="software\wm6\swsp.htm" />
     <Content Include="software\gadgets\stirlingweather\StirlingWeather.gadget" />
     <Content Include="software\pocketpc\currency\CurrencyConverterSetup.msi" />
-    <Content Include="software\pocketpc\langtons\LangtonsAnt.zip" />
     <Content Include="software\pocketpc\stirlingweather\StirlingWeatherSetup.msi" />
     <Content Include="software\pocketpc\themes\AlluvialFan.tsk" />
     <Content Include="software\pocketpc\themes\Bandelier.tsk" />
@@ -518,7 +517,6 @@
     <Content Include="Views\Software\WMSmartphone.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="software\smartphone\stirlingweather\StirlingWeatherSetup.SP.msi" />
-    <Content Include="software\windows\basecampsync\BasecampPeopleSync.zip" />
     <Content Include="software\windows\itunes\iTunesPlaylistConverter.application" />
     <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0.application" />
     <Content Include="software\windows\itunes\iTunesPlaylistConverter_1_1_0_0\favicon.ico.deploy" />
