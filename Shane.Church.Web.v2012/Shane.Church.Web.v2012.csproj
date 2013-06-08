@@ -304,6 +304,10 @@
     <Content Include="software\windowsphone\whatieat\2.png" />
     <Content Include="software\windowsphone\whatieat\3.png" />
     <Content Include="software\windowsphone\whatieat\4.png" />
+    <Content Include="software\windowsphone\whatieat\5.png" />
+    <Content Include="software\windowsphone\whatieat\6.png" />
+    <Content Include="software\windowsphone\whatieat\7.png" />
+    <Content Include="software\windowsphone\whatieat\8.png" />
     <Content Include="software\windowsphone\whatieat\AppIcon.png" />
     <Content Include="software\windows\basecampsync\BasecampSync.png" />
     <Content Include="software\windows\basecampsync\BasecampSyncProgress.png" />
