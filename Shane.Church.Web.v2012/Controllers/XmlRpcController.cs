@@ -1,3 +1,4 @@
+using Shane.Church.Web.v2012.XmlRpc;
 using System.IO;
 using System.Web.Mvc;
 using System.Xml;
@@ -55,7 +56,7 @@ namespace Shane.Church.Web.v2012.Controllers
 
 		public ActionResult Endpoint()
 		{
-			return new XmlRpcResult();
+			return new XmlRpcResult(typeof(MetaWeblogApi));
 		}
 	}
 }
