@@ -332,6 +332,50 @@ aside .container {
 	background-color: #fff;
 }
 
+#carbonads-container {
+/*Used to contain all of the elements and page positioning */
+    margin-top: 5px;
+}
+.carbonad {
+/*Used for box styling: height, width, background and border*/
+    height: 118px !important;
+    width: 305px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+/*.carbonad-image {
+Used for positioning the image
+    display: inline;
+}
+.carbonad-text {
+    Used for styling the text: font, font-size, color
+    display: inline-block;
+}*/
+.carbonad-text a {
+    /*Used for styling the text link: font, font-size, color*/
+    color: #FFFFFF !important;
+}
+.carbonad-text a:hover {
+    background-color:transparent !important;
+    text-decoration: underline !important;
+}
+.carbonad-tag {
+/*Used for styling the ads via Carbon text*/
+}
+.carbonad-tag a {
+    /*Used for styling the Carbon link*/
+    color: #FFFFFF !important;
+}
+.carbonad-tag a:hover {
+    background-color:transparent !important;
+    text-decoration: underline !important;
+}
+
+#carbonads-container .carbonad {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
 .html5 {
 	margin-top: 5px;
 	text-align: center;
@@ -1274,6 +1318,26 @@ div.modal-content a.button {
 		margin-top: 40px;
 		text-align: center;
 	}
+
+    #carbonads-container {
+    /*Used to contain all of the elements and page positioning */
+        margin-top: 20px;
+    }
+    .carbonad {
+    /*Used for box styling: height, width, background and border*/
+        height: 215px !important;
+        width: 150px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    /*.carbonad-image {
+    Used for positioning the image
+        display: inline-block;
+    }
+    .carbonad-text {
+        Used for styling the text: font, font-size, color
+        display: block;
+    }*/
 
 	.html5 {
 		position: absolute;
