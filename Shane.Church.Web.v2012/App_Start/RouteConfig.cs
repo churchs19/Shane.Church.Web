@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Shane.Church.Web.v2012
@@ -186,6 +182,11 @@ namespace Shane.Church.Web.v2012
 				"WhatIEatWP",
 				"WhatIEat/WindowsPhone",
 				new { controller = "Software", action = "WindowsPhone", id = 2 });
+
+			routes.MapRoute(
+				"StirlingBirthday",
+				"StirlingBirthday/WindowsPhone",
+				new { controller = "Software", action = "WindowsPhone", id = 3 });
 			#endregion
 
 			//End Software Routes
