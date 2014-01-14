@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Web.Mvc;
 using System.Web.Security;
 
 namespace Shane.Church.Web.v2012.Models
@@ -23,7 +22,7 @@ namespace Shane.Church.Web.v2012.Models
 
 		[DataType(DataType.Password)]
 		[Display(Name = "Confirm new password")]
-		[System.Web.Mvc.Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+		[Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }
 	}
 
@@ -61,7 +60,7 @@ namespace Shane.Church.Web.v2012.Models
 
 		[DataType(DataType.Password)]
 		[Display(Name = "Confirm password")]
-		[System.Web.Mvc.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }
 	}
 }

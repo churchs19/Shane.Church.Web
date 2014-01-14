@@ -65,17 +65,17 @@
 	@Scripts.Render("~/bundles/shanechurch/photoalbum")
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$("a.prev_link").live("click", function () {
+		    $(document).on("click", "a.prev_link", function () {
 				$().PhotoAlbum("loadPage", { href: $(this).attr("href") });
 				return false;
 			});
 
-			$("a.next_link").live("click", function () {
+		    $(document).on("click", "a.next_link", function () {
 				$().PhotoAlbum("loadPage", { href: $(this).attr("href") });
 				return false;
 			});
 
-			$(".photo_item a").live("click", function () {
+		    $(".photo_item").on("click", "a", function () {
 				var $this = $(this);
 				var $parent = $this.parents("article.photo_item");
 

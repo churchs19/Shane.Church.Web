@@ -1,5 +1,6 @@
 ﻿using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.StorageClient;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,7 +17,7 @@ namespace Shane.Church.Web.Cloud.Azure
 		public AzureBlobStorage()
 		{
 			// Retrieve storage account from connection string.
-			CloudStorageAccount storageAccount = new CloudStorageAccount(new Microsoft.WindowsAzure.StorageCredentialsAccountAndKey("schurchweb", "qSABklIU9GOHwfvxJ8OOqN5WYLukIRFwHqEtzs0M6aWULHUg4yf17n7XZqOX5Ip4M+kwyMTAxA7X+HcDYM8b0Q=="), true);
+			CloudStorageAccount storageAccount = new CloudStorageAccount(new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials("schurchweb", "qSABklIU9GOHwfvxJ8OOqN5WYLukIRFwHqEtzs0M6aWULHUg4yf17n7XZqOX5Ip4M+kwyMTAxA7X+HcDYM8b0Q=="), true);
 
 			// Create the blob client.
 			_blobClient = storageAccount.CreateCloudBlobClient();
@@ -28,7 +29,7 @@ namespace Shane.Church.Web.Cloud.Azure
 			CloudBlobContainer container = _blobClient.GetContainerReference("schurchweb");
 
 			// Create the container if it doesn't already exist.
-			container.CreateIfNotExist();
+			container.CreateIfNotExists();
 
 			return container;
 		}
@@ -69,7 +70,7 @@ namespace Shane.Church.Web.Cloud.Azure
 		public List<string> ListObjects()
 		{
 			List<string> objects = new List<string>();
-			IEnumerable<IListBlobItem> blobs = GetContainer().ListBlobs(new BlobRequestOptions() { UseFlatBlobListing = true });
+			IEnumerable<IListBlobItem> blobs = GetContainer().ListBlobs(useFlatBlobListing: true);
 			foreach (var b in blobs)
 				objects.Add(b.Uri.ToString());
 			return objects;

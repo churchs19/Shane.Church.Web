@@ -89,7 +89,7 @@
 	@Scripts.Render("~/bundles/shanechurch/photoalbum")
 	<script type="text/javascript">
 		$(document).ready(function () {
-			$(".photos_container a.photo-item").live("click", function () {
+		    $(".photos_container").on("click", "a.photo-item", function () {
 				var $this = $(this);
 
 				var title = $this.find("h4").text();

@@ -10,7 +10,7 @@ namespace Shane.Church.Web.Cloud.AWS
 {
 	public class AWSS3BlobStorage : IBlobStorage
 	{
-		private AmazonS3 _amazonClient;
+		private IAmazonS3 _amazonClient;
 		private const string _containerPrefix = "shane.church.";
 		private const string _containerName = "photos";
 
@@ -24,10 +24,10 @@ namespace Shane.Church.Web.Cloud.AWS
 			try
 			{
 				PutObjectRequest request = new PutObjectRequest();
-				request.WithBucketName(_containerPrefix + _containerName).WithKey(objectName).WithInputStream(content);
-				request.Timeout = 30000;
-				S3Response response = _amazonClient.PutObject(request);
-				response.Dispose();
+				request.BucketName = _containerPrefix + _containerName;
+				request.Key = objectName;
+				request.InputStream = content;
+				PutObjectResponse response = _amazonClient.PutObject(request);
 			}
 			catch (AmazonS3Exception amazonS3Exception)
 			{
@@ -48,8 +48,9 @@ namespace Shane.Church.Web.Cloud.AWS
 		{
 			try
 			{
-				GetObjectRequest request = new GetObjectRequest().WithBucketName(_containerPrefix + _containerName).WithKey(objectName);
-				request.Timeout = 10000;
+				GetObjectRequest request = new GetObjectRequest();
+				request.BucketName = _containerPrefix + _containerName;
+				request.Key = objectName;
 				GetObjectResponse response = _amazonClient.GetObject(request);
 				return response.ResponseStream;
 			}
@@ -82,8 +83,8 @@ namespace Shane.Church.Web.Cloud.AWS
 			try
 			{
 				DeleteObjectRequest request = new DeleteObjectRequest();
-				request.WithBucketName(_containerPrefix + _containerName)
-					.WithKey(objectName);
+				request.BucketName = _containerPrefix + _containerName;
+				request.Key = objectName;
 				DeleteObjectResponse response = _amazonClient.DeleteObject(request);
 			}
 			catch (AmazonS3Exception amazonS3Exception)
@@ -108,12 +109,10 @@ namespace Shane.Church.Web.Cloud.AWS
 			{
 				ListObjectsRequest request = new ListObjectsRequest();
 				request.BucketName = _containerPrefix + _containerName;
-				using (ListObjectsResponse response = _amazonClient.ListObjects(request))
+				ListObjectsResponse response = _amazonClient.ListObjects(request);
+				foreach (S3Object entry in response.S3Objects)
 				{
-					foreach (S3Object entry in response.S3Objects)
-					{
-						objects.Add(entry.Key);
-					}
+					objects.Add(entry.Key);
 				}
 			}
 			catch (AmazonS3Exception amazonS3Exception)
