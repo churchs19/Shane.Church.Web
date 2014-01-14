@@ -10,6 +10,7 @@ using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 using AutoMapper;
+using Microsoft.ApplicationInsights.Telemetry.Services;
 
 namespace Shane.Church.Web.v2012
 {
@@ -33,6 +34,13 @@ namespace Shane.Church.Web.v2012
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 			AuthConfig.RegisterAuth();
+
+			ServerAnalytics.Start("a7eab16c-ca96-440e-b975-da3c4b746fda");
+		}
+
+		protected void Application_BeginRequest()
+		{
+			ServerAnalytics.BeginRequest();
 		}
 	}
 }

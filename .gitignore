@@ -5,3 +5,4 @@ obj
 *.vspscc
 *.vssscc
 *.suo
+/# Release
