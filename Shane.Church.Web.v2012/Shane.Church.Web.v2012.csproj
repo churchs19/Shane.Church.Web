@@ -8,7 +8,7 @@
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{F72FEFC7-266F-4920-8C38-67D861763E2D}</ProjectGuid>
-    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Shane.Church.Web.v2012</RootNamespace>
@@ -318,6 +318,8 @@
     <Content Include="Monitoring.CollectionPlan.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\schurch - FTP %283%29.pubxml" />
+    <None Include="Properties\PublishProfiles\schurch - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -334,6 +336,53 @@
     <Content Include="software\gadgets\stirlingweather\Stirling-Weather-Warnings.png" />
     <Content Include="software\gadgets\stirlingweather\Stirling-Weather.png" />
     <Content Include="Global.asax" />
+    <Content Include="software\stirlingmoneyprivacy\advertising.html" />
+    <Content Include="software\stirlingmoneyprivacy\analytics.html" />
+    <Content Include="software\stirlingmoneyprivacy\control.html" />
+    <Content Include="software\stirlingmoneyprivacy\css\bootstrap-responsive.css" />
+    <Content Include="software\stirlingmoneyprivacy\css\bootstrap-responsive.min.css" />
+    <Content Include="software\stirlingmoneyprivacy\css\bootstrap.css" />
+    <Content Include="software\stirlingmoneyprivacy\css\bootstrap.min.css" />
+    <Content Include="software\stirlingmoneyprivacy\css\main.css" />
+    <Content Include="software\stirlingmoneyprivacy\data-collection.html" />
+    <Content Include="software\stirlingmoneyprivacy\direct-marketing.html" />
+    <Content Include="software\stirlingmoneyprivacy\img\arrow-back.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\arrow-down.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\arrow-right.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\arrow-up.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\contacts-off.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\contacts-on.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\cross.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\email-off.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\email-on.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\glyphicons-halflings-white.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\glyphicons-halflings.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\likes-off.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\likes-on.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\location-off.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\location-on.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\message-off.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\message-on.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\other-off.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\other-on.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\phone-off.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\phone-on.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\photos-off.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\photos-on.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\sms-off.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\sms-on.jpg" />
+    <Content Include="software\stirlingmoneyprivacy\img\tick-off.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\tick-on.png" />
+    <Content Include="software\stirlingmoneyprivacy\img\tick.png" />
+    <Content Include="software\stirlingmoneyprivacy\index.html" />
+    <Content Include="software\stirlingmoneyprivacy\js\bootstrap.js" />
+    <Content Include="software\stirlingmoneyprivacy\js\bootstrap.min.js" />
+    <Content Include="software\stirlingmoneyprivacy\js\jquery.min.js" />
+    <Content Include="software\stirlingmoneyprivacy\js\main.js" />
+    <Content Include="software\stirlingmoneyprivacy\location-services.html" />
+    <Content Include="software\stirlingmoneyprivacy\payments.html" />
+    <Content Include="software\stirlingmoneyprivacy\security.html" />
+    <Content Include="software\stirlingmoneyprivacy\social-networking.html" />
     <Content Include="software\windowsphone\stirlingbirthday\01.WVGA.png" />
     <Content Include="software\windowsphone\stirlingbirthday\02.WVGA.png" />
     <Content Include="software\windowsphone\stirlingbirthday\03.WVGA.png" />
@@ -604,6 +653,7 @@
     <Content Include="software\windows\stirlingweather\Application Files\StirlingWeatherTray_2_2_3441_0\WeatherGovLib.dll.deploy" />
     <Content Include="software\windows\stirlingweather\StirlingWeatherTray.application" />
     <Content Include="software\windows\stirlingweather\StirlingWeatherTray_2_0_2900_0.application" />
+    <Content Include="software\stirlingmoneyprivacy\docs\README_AppPrivacy.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
