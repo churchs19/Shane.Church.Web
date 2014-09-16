@@ -64,9 +64,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.WindowsLive.PublishPlugins, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Windows Live\Photo Gallery\Microsoft.WindowsLive.PublishPlugins.dll</HintPath>
+    <Reference Include="Microsoft.WindowsLive.PublishPlugins">
+      <HintPath>..\lib\Windows Live Photo Gallery\Microsoft.WindowsLive.PublishPlugins.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
