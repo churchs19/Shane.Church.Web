@@ -2,20 +2,27 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.ConfigurationModel;
 
 namespace Shane.Church.Web.v2015
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
+		public IConfiguration Configuration { get; private set; }
+
+		public Startup()
+		{
+			Configuration = new Configuration().AddJsonFile("config.json");
+		}
+
+		public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app)
         {
-            // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
-            app.UseMvc();
+			app.UseMvc();
             app.UseWelcomePage();
         }
     }

@@ -6,3 +6,4 @@ obj
 *.vssscc
 *.suo
 /# Release
+/.vs/Shane.Church.Web/v14/vbcs.cache
