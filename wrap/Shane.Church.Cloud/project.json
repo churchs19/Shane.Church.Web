@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../Shane.Church.Cloud/Shane.Church.Web.Cloud.csproj",
+      "bin": {
+        "assembly": "../../Shane.Church.Cloud/obj/{configuration}/Shane.Church.Cloud.dll",
+        "pdb": "../../Shane.Church.Cloud/obj/{configuration}/Shane.Church.Cloud.pdb"
+      }
+    }
+  }
+}

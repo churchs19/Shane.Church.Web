@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net45": {
+      "wrappedProject": "../../Shane.Church.Web.Common/Shane.Church.Web.Common.csproj",
+      "bin": {
+        "assembly": "../../Shane.Church.Web.Common/obj/{configuration}/Shane.Church.Web.Common.dll",
+        "pdb": "../../Shane.Church.Web.Common/obj/{configuration}/Shane.Church.Web.Common.pdb"
+      }
+    }
+  }
+}

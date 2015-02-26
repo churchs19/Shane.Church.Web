@@ -1,0 +1,7 @@
+﻿{
+    "Data": {
+        "DataContext": {
+            "ConnectionString": "Server=tcp:kfvpwbb0gl.database.windows.net,1433;Database=schurch_net;User ID=shane@kfvpwbb0gl;Password=Augu$t18o6;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;"
+        }
+    }
+}

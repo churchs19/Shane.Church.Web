@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22512.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shane.Church.Web.Data", "Shane.Church.Web.Data\Shane.Church.Web.Data.csproj", "{3F700FC4-7009-4A99-8AC5-BDCEDE3AB31A}"
 EndProject
@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D06980
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shane.Church.Web.v2015", "Shane.Church.Web.v2015\Shane.Church.Web.v2015.kproj", "{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +82,10 @@ Global
 		{F72FEFC7-266F-4920-8C38-67D861763E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F72FEFC7-266F-4920-8C38-67D861763E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F72FEFC7-266F-4920-8C38-67D861763E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{D4E190B0-06F9-41E4-823D-F3943D2FF091} = {66DEE620-AD19-4F21-9DD7-0E4A4FF712B3}
 		{F7EA4CBC-0B50-4FF2-AAE8-6C1C83BC66AE} = {4D944380-DF5B-4DF1-AC1C-33D24B35B0A6}
 		{F72FEFC7-266F-4920-8C38-67D861763E2D} = {38FD5065-7305-4933-BB73-2087A20D75E8}
+		{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7} = {38FD5065-7305-4933-BB73-2087A20D75E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
