@@ -7,3 +7,6 @@ obj
 *.suo
 /# Release
 /.vs/Shane.Church.Web/v14/vbcs.cache
+/Shane.Church.Web.v2015/wwwroot/lib
+/Shane.Church.Web.v2015/bower_components
+/Shane.Church.Web.v2015/node_modules

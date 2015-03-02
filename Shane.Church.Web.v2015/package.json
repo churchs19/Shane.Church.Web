@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "name": "Shane.Church.Web",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-modernizr": "^0.6.0"
+  },
+  "dependencies": {}
+}

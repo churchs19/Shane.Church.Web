@@ -23,7 +23,8 @@ namespace Shane.Church.Web.v2015
         public void Configure(IApplicationBuilder app)
         {
 			app.UseMvc();
-            app.UseWelcomePage();
+			app.UseStaticFiles();
+			app.UseWelcomePage();
         }
     }
 }

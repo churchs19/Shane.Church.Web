@@ -3,6 +3,7 @@
     {
       "name": "IIS Express",
       "launchBrowser": true,
+      "launchUrl": "index.html",
       "sdkVersion": "kre-clr-win-x86.1.0.0-beta3"
     }
   ]
