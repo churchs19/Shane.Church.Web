@@ -14,8 +14,10 @@
 	<meta name="description" content="A free HTML5/CSS3 template made exclusively for Codrops by Peter Finlan" />
 	<meta name="keywords" content="html5 template, css3, one page, animations, agency, portfolio, web design" />
 	<meta name="author" content="Shane Church" />
+	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- Bootstrap -->
 	<script src="lib/modernizr/modernizr-2.8.3.js"></script>
+	<link href="lib/normalize.css/normalize.css" rel="stylesheet" />
 	<link href="lib/bootstrap/bootstrap.css" rel="stylesheet">
 	<link href="css/jquery.fancybox.css" rel="stylesheet">
 	<link href="css/flickity.css" rel="stylesheet">
@@ -51,31 +53,22 @@
 			<div class="texture-overlay"></div>
 			<div class="container">
 				<div class="row nav-wrapper">
-					<div class="col-md-6 col-sm-6 col-xs-6 text-left">
-						<a href="#"><span class="logo-text">Shane Church</span></a>
+					<div class="col-md-8 col-sm-8 col-xs-8 text-left">
+						<a href="#" class="logo-text"><div class="logo-image"></div>Shane Church</a>
 					</div>
-					<div class="col-md-6 col-sm-6 col-xs-6 text-right navicon">
-						<p>MENU</p><a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
+					<div class="col-md-4 col-sm-4 col-xs-4 text-right navicon">
+						<p class="menu-label">MENU</p><a id="trigger-overlay" class="nav_slide_button nav-toggle" href="#"><span></span></a>
 					</div>
 				</div>
 				<div class="row hero-content">
 					<div class="col-md-12">
 						<h1 class="animated fadeInDown">An Exclusive, Premium HTML5 &amp; CSS3 Template by Peter Finlan, for Codrops.</h1>
-						<a href="http://tympanus.net/codrops/?p=22554" class="use-btn animated fadeInUp">Use it for free</a> <a href="#about" class="learn-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
+						<a href="http://tympanus.net/codrops/?p=22554" class="primary-btn animated fadeInUp">Use it for free</a> <a href="#about" class="secondary-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
 					</div>
 				</div>
 			</div>
 		</section>
 	</header>
-	<!--<section class="video" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1><a href="http://www.youtube.com/embed/9No-FiEInLA?autoplay=1&wmode=opaque&fs=1" class="youtube-media"><i class="fa fa-play-circle-o"></i> Watch the Video</a></h1>
-				</div>
-			</div>
-		</div>
-	</section>-->
 	<section class="features-intro">
 		<div class="container-fluid">
 			<div class="row">
@@ -122,7 +115,7 @@
 						<div class="feature-content">
 							<h1>Responsive</h1>
 							<p>Built using HTML5/CSS3 and jQuery, and built using one of the world's most powerful CSS frameworks available, Bootstrap.</p>
-							<a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+							<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 feature-2 wp2 delay-05s">
@@ -132,7 +125,7 @@
 						<div class="feature-content">
 							<h1>Multi-Purpose</h1>
 							<p>Perfect if you run your own start-up, product or service. Boxify can showcase your business converting your visits to income.</p>
-							<a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+							<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4 feature-3 wp2 delay-1s">
@@ -142,7 +135,7 @@
 						<div class="feature-content">
 							<h1>Absolutely Free</h1>
 							<p>As aways, download Boxify for free exclusively from Codrops. If you love Boxify and want to thank me, simply <a href="http://peterfinlan.com/">buy me a beer</a>. </p>
-							<a href="http://tympanus.net/codrops/?p=22554" class="read-more-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+							<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -183,7 +176,7 @@
 								<a href="http://tympanus.net/codrops/"><img src="img/codrops-logo.png" alt="Codrops Logo"></a>
 							</div>
 						</blockquote>
-						<a href="http://tympanus.net/codrops/?p=22554" class="download-btn">Download! <i class="fa fa-download"></i></a>
+						<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Download! <i class="fa fa-download"></i></a>
 					</div>
 				</div>
 			</div>
@@ -321,7 +314,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center wp4">
 					<h1>Seen Enough?</h1>
-					<a href="http://tympanus.net/codrops/?p=22554" class="download-btn">Download! <i class="fa fa-download"></i></a>
+					<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Download! <i class="fa fa-download"></i></a>
 				</div>
 			</div>
 		</div>
@@ -331,16 +324,16 @@
 			<div class="row">
 				<div class="col-md-5">
 					<h1 class="footer-logo">
-						<img src="img/logo-blue.png" alt="Footer Logo Blue">
+						<img src="img/SCLogo-purple-42x31.png" alt="">
 					</h1>
-					<p>© Boxify 2015 - <a href="http://tympanus.net/codrops/licensing/">Licence</a> - Designed &amp; Developed by <a href="http://www.peterfinlan.com/">Peter Finlan</a></p>
+					<p>© Shane Church 2015
 				</div>
 				<div class="col-md-7">
 					<ul class="footer-nav">
-						<li><a href="#about">About</a></li>
-						<li><a href="#features">Features</a></li>
-						<li><a href="#screenshots">Screenshots</a></li>
-						<li><a href="#download">Download</a></li>
+						<li><a href="/resume.pdf">Resumé</a></li>
+						<li><a href="/Blog">Blog</a></li>
+						<li><a href="/PhotoAlbum">Photo Album</a></li>
+						<li><a href="/Software">Software</a></li>
 					</ul>
 				</div>
 			</div>
@@ -349,33 +342,24 @@
 	<div class="overlay overlay-boxify">
 		<nav>
 			<ul>
-				<li><a href="#about"><i class="fa fa-heart"></i>About</a></li>
-				<li><a href="#features"><i class="fa fa-flash"></i>Features</a></li>
+				<li><a href="resume.pdf"><i class="fa fa-file-pdf-o"></i>Resumé</a></li>
+				<li><a href="/Blog"><i class="fa fa-book"></i>Blog</a></li>
 			</ul>
 			<ul>
-				<li><a href="#screenshots"><i class="fa fa-desktop"></i>Screenshots</a></li>
-				<li><a href="#download"><i class="fa fa-download"></i>Download</a></li>
+				<li><a href="/PhotoAlbum"><i class="fa fa-camera-retro"></i>Photo Album</a></li>
+				<li><a href="/Software"><i class="fa fa-laptop"></i>Software</a></li>
 			</ul>
 		</nav>
 	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="js/min/toucheffects-min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="lib/jquery/jquery.js"></script>
 	<script src="js/flickity.pkgd.min.js"></script>
 	<script src="js/jquery.fancybox.pack.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/retina.js"></script>
 	<script src="js/waypoints.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/min/scripts-min.js"></script>
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-	<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
-	</script>
+	<script src="lib/bootstrap/bootstrap.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
 </html>

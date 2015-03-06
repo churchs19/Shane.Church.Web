@@ -3,6 +3,7 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.ConfigurationModel;
+using Microsoft.AspNet.StaticFiles;
 
 namespace Shane.Church.Web.v2015
 {
@@ -22,9 +23,11 @@ namespace Shane.Church.Web.v2015
 
         public void Configure(IApplicationBuilder app)
         {
-			app.UseMvc();
 			app.UseStaticFiles();
-			app.UseWelcomePage();
+			DefaultFilesOptions dfOpts = new DefaultFilesOptions();
+			dfOpts.DefaultFileNames.Add("index.html");
+			app.UseDefaultFiles(dfOpts);
+			app.UseMvc();
         }
     }
 }
