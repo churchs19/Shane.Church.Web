@@ -75,10 +75,15 @@ Buttons
     border-radius: 3px;
     color: #fff;
     font-size: 16px;
+	background: none;
 }
 .secondary-btn:hover, .secondary-btn:focus {
     border-color: #49488E;
-    color: #49488E;
+    /*color: #49488E;
+    text-decoration: none;
+	background-color: #fff;*/
+    background-color: #49488E;
+    color: #fff;
     text-decoration: none;
 }
 .read-more-btn {
@@ -404,21 +409,21 @@ Showcase
     position: absolute;
     top: -60px;
     left: 20%;
-    min-height: 676px;
-    width: 359px;
-    background: url('../img/iphone-skeleton.png') no-repeat center center;
+    min-height: 677px;
+    width: 372px;
+    background: url('../img/Lumia920-Skeleton.png') no-repeat center center;
 }
 .device-content {
     position: absolute;
-    top: 115px;
-    left: 56px;
-    width: 247px;
-    height: 445px;
+    top: 60px;
+    left: 33px;
+    width: 303px;
+    height: 505px;
     background: rgba(0, 0, 0, 0.3);
 }
 .device-content img {
-    width: 247px;
-    height: 445px;
+    width: 303px;
+    height: 505px;
 }
 .showcase-wrap {
     position: relative;

@@ -6,8 +6,7 @@
     "bootstrap": "~3.3.2",
     "html5shiv": "~3.7.2",
     "respond": "~1.4.2",
-    "normalize.css": "~3.0.2",
-    "fontawesome": "~4.3.0"
+    "normalize.css": "~3.0.2"
   },
   "exportsOverride": {}
 }
