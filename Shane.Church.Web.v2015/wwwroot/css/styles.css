@@ -14,18 +14,40 @@ Global Styles
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/Roboto regular-webfont.eot');
+    src: url('../fonts/Roboto regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Roboto regular-webfont.woff2') format('woff2'),
+         url('../fonts/Roboto regular-webfont.woff') format('woff'),
+         url('../fonts/Roboto regular-webfont.ttf') format('truetype'),
+         url('../fonts/Roboto regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+	font-family: 'robotoregular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .group:after {
     content: "";
     display: table;
     clear: both;
 }
 a {
-    -webkit-transition-timing-function: ease-in-out;
-    transition-timing-function: ease-in-out;
-    -webkit-transition-duration: 300ms;
-    transition-duration: 300ms;
-    -webkit-transition-property: color, border-color, background-color;
-    transition-property: color, border-color, background-color;
+	-webkit-transition-timing-function: ease-in-out;
+	-moz-transition-timing-function: ease-in-out;
+	-o-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-duration: 300ms;
+	-moz-transition-duration: 300ms;
+	-o-transition-duration: 300ms;
+	transition-duration: 300ms;
+	-webkit-transition-property: color, border-color, background-color;
+	-moz-transition-property: color, border-color, background-color;
+	-o-transition-property: color, border-color, background-color;
+	transition-property: color, border-color, background-color;
 }
 .nopadding {
     margin: 0 !important;
@@ -50,6 +72,14 @@ a:hover, a:focus {
     height: 100%;
     background-image: url(../img/grid.png);
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'poiret_oneregular';
+}
 
 /* ==========================================================================
 Buttons
@@ -63,7 +93,8 @@ Buttons
     color: #26264C;
     font-size: 16px;
 }
-.primary-btn:hover, .primary-btn:focus {
+.primary-btn:hover, 
+.primary-btn:focus {
     background-color: #49488E;
     color: #fff;
     text-decoration: none;
@@ -77,22 +108,15 @@ Buttons
     font-size: 16px;
 	background: none;
 }
-.secondary-btn:hover, .secondary-btn:focus {
+.secondary-btn:hover,
+.secondary-btn:focus {
     border-color: #49488E;
-    /*color: #49488E;
-    text-decoration: none;
-	background-color: #fff;*/
     background-color: #49488E;
     color: #fff;
     text-decoration: none;
 }
-.read-more-btn {
-    display: inline-block;
-    color: #26264C;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-.read-more-btn i, .download-btn i {
+.primary-btn i,
+.secondary-btn i {
     margin-left: 5px
 }
 .showcase .download-btn {
@@ -116,7 +140,9 @@ Navigation
 .nav-toggle:focus {
     outline: none;
 }
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+.nav-toggle span, 
+.nav-toggle span:before, 
+.nav-toggle span:after {
     content: '';
     position: absolute;
     display: block;
@@ -132,27 +158,35 @@ Navigation
 .nav-toggle span:after {
     bottom: -10px
 }
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-}
+	.nav-toggle span,
+	.nav-toggle span:before,
+	.nav-toggle span:after {
+		-webkit-transition: all 300ms ease-in-out;
+		-moz-transition: all 300ms ease-in-out;
+		-o-transition: all 300ms ease-in-out;
+		transition: all 300ms ease-in-out;
+	}
 .nav-toggle.active span {
     background-color: transparent
 }
 .nav-toggle.active span:before, .nav-toggle.active span:after {
     top: 0
 }
-.nav-toggle.active span:before {
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-.nav-toggle.active span:after {
-    top: 10px;
-    -webkit-transform: translateY(-10px) rotate(-45deg);
-    -ms-transform: translateY(-10px) rotate(-45deg);
-    transform: translateY(-10px) rotate(-45deg);
-}
+	.nav-toggle.active span:before {
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	.nav-toggle.active span:after {
+		top: 10px;
+		-webkit-transform: translateY(-10px) rotate(-45deg);
+		-ms-transform: translateY(-10px) rotate(-45deg);
+		-moz-transform: translateY(-10px) rotate(-45deg);
+		-o-transform: translateY(-10px) rotate(-45deg);
+		transform: translateY(-10px) rotate(-45deg);
+	}
 .navicon {
     position: relative;
     height: 26px;
@@ -218,38 +252,11 @@ Hero
     width: 100%;
     height: 100%;
 }
+.hero-content h1 {
+	font-family: 'robotoregular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 header i {
     margin-left: 5px
-}
-
-/* ==========================================================================
-Video
-========================================================================== */
-section.video i {
-    margin-right: 10px;
-    color: #26264C;
-    vertical-align: middle;
-    font-size: 50px;
-    -webkit-transition: color 300ms ease-in-out;
-    transition: color 300ms ease-in-out;
-}
-section.video h1 {
-    font-weight: 400;
-    font-size: 20px;
-}
-section.video {
-    padding: 60px 0;
-    background-color: #VV;
-}
-section.video a {
-    color: #26264C
-}
-section.video a:hover, section.video a:focus {
-    color: #49488E;
-    text-decoration: none;
-}
-section.video a:hover i, section.video a:focus i {
-    color: #49488E
 }
 
 /* ==========================================================================
@@ -440,54 +447,49 @@ Showcase
 }
 
 /* ==========================================================================
-Screenshots Intro
+Photos Intro
 ========================================================================== */
-.screenshots-intro {
-    padding: 170px 0 100px 0;
+.photos-intro {
+    padding: 170px 0 30px 0;
     background-color: #CCC;
 }
-.screenshots-intro h1 {
+.photos-intro h1 {
     margin-bottom: 20px;
     color: #26264C;
-    font-weight: 400;
-    font-size: 22px;
-}
-.screenshots-intro p {
-    margin-bottom: 25px;
-    color: #CCC;
+    font-size: 60px;
 }
 
 /* ==========================================================================
 Screenshots
 ========================================================================== */
-.screenshots ul {
+.photos ul {
     margin: 0;
     padding: 0;
     width: 100%;
 }
-.screenshots ul li {
+.photos ul li {
     float: left;
     min-height: 100%;
     width: 25%;
     background-color: #000;
     list-style: none;
 }
-.screenshots figure {
+.photos figure {
     position: relative;
     overflow: hidden;
 }
-.screenshots figure img {
+.photos figure img {
     width: 100%;
     height: 100%;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
-.screenshots figure:hover img, .screenshots figure:focus img {
+.photos figure:hover img, .photos figure:focus img {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
-.screenshots figcaption {
+.photos figcaption {
     position: absolute;
     top: 0;
     left: 0;
@@ -501,30 +503,30 @@ Screenshots
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
-.screenshots figcaption a {
+.photos figcaption a {
     color: #fff
 }
-.screenshots figcaption a:hover, .screenshots figcaption a:focus {
+.photos figcaption a:hover, .photos figcaption a:focus {
     color: #49488E;
 }
-.screenshots figure:hover figcaption, .screenshots figure:focus figcaption {
+.photos figure:hover figcaption, .photos figure:focus figcaption {
     opacity: 1
 }
 .visible {
     opacity: 1
 }
-.screenshots figure.cs-hover figcaption {
+.photos figure.cs-hover figcaption {
     opacity: 1
 }
-.screenshots figcaption i {
+.photos figcaption i {
     font-size: 35px
 }
-.screenshots figcaption p {
+.photos figcaption p {
     margin-bottom: 0;
     text-transform: uppercase;
     font-weight: 400;
 }
-.screenshots figcaption .caption-content {
+.photos figcaption .caption-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -537,7 +539,7 @@ Screenshots
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
-.screenshots figure:hover figcaption .caption-content, .screenshots figure:focus figcaption .caption-content {
+.photos figure:hover figcaption .caption-content, .photos figure:focus figcaption .caption-content {
     -webkit-transform: translate(0px, 0px);
     -ms-transform: translate(0px, 0px);
     transform: translate(0px, 0px);

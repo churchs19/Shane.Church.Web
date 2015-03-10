@@ -34,11 +34,11 @@
 		display: none;
 	}
 
-	.screenshots ul li {
+	.photos ul li {
 		width: 50%;
 	}
 
-	.screenshots-intro {
+	.photos-intro {
 		padding: 110px 0 100px 0;
 	}
 
@@ -102,23 +102,10 @@
 		margin: 100px 0 45px 0;
 	}
 
-	.screenshots ul li {
+	.photos ul li {
 		width: 100%;
 		min-height: 100%;
 		float: none;
-	}
-
-	section.video i {
-		font-size: 30px;
-	}
-
-	section.video h1 {
-		font-size: 15px;
-		font-weight: 400;
-	}
-
-	section.video {
-		padding: 40px;
 	}
 
 	.feature-content {
