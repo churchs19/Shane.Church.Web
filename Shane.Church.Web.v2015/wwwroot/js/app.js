@@ -2,8 +2,10 @@
 
 angular.module('shane.church', [
   'ngRoute',
-  'shane.church.home'
+  'shane.church.home',
+  'shane.church.shared.waypoint'
 ]).
-config(['$routeProvider', function ($routeProvider) {
-	$routeProvider.otherwise({ redirectTo: '/' });
+config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+	$locationProvider.html5Mode(true);
+	$routeProvider.otherwise({ redirectTo: '' });
 }]);
