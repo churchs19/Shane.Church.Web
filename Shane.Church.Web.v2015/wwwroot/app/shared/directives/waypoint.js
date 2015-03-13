@@ -1,7 +1,4 @@
 ﻿angular.module('shane.church.shared.waypoint', [])
-	.controller('waypointCtrl' ['$scope', function($scope) {
-
-	}])
 	.directive('waypoint', [function () {
 		function link(scope, element, attrs) {			
 			$(element).waypoint(function() {

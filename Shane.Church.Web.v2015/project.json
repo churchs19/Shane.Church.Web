@@ -21,14 +21,14 @@
 		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
 		"Microsoft.AspNet.StaticFiles": "1.0.0-beta3"
 	},
-    "frameworks": {
-        "aspnet50": {
-            "dependencies": {
-                "Shane.Church.Cloud": "1.0.0-*",
-                "Shane.Church.Web.Data.Azure": "1.0.0-*",
-                "Shane.Church.Web.Common": "1.0.0-*",
-                "Shane.Church.Web.Data": "1.0.0-*"
-            }
-        }
-    }
+	"frameworks": {
+		"aspnet50": {
+			"dependencies": {
+				"Shane.Church.Cloud": "1.0.0-*",
+				"Shane.Church.Web.Data.Azure": "1.0.0-*",
+				"Shane.Church.Web.Common": "1.0.0-*",
+				"Shane.Church.Web.Data": "1.0.0-*"
+			}
+		}
+	}
 }

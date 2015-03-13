@@ -1,4 +1,4 @@
-﻿<header waypoint ng-attr-waypoint-classes="animated fadeInLeft" ng-attr-waypoint-offset="75%">
+﻿<header>
 	<section class="hero">
 		<div class="texture-overlay"></div>
 		<div class="container">
@@ -24,8 +24,8 @@
 			</div>
 			<div class="row hero-content">
 				<div class="col-md-12">
-					<h1 class="animated fadeInDown">Father, Software Developer, Rockies Fan</h1>
-					<a href="/Blog" class="primary-btn animated fadeInUp">Blog</a> <a href="#about" class="primary-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
+					<h1 class="animated fadeInDown">Father, Software Developer, Colorado Rockies Fan</h1>
+					<a href="/Blog" class="primary-btn animated fadeInUp">Blog</a> <a href="#" scroll-to="features" class="primary-btn animated fadeInUp">Learn more <i class="fa fa-arrow-down"></i></a>
 				</div>
 			</div>
 		</div>
@@ -34,17 +34,17 @@
 <section class="features-intro">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 nopadding features-intro-img">
-				<div class="features-bg">
+			<div class="col-md-4 nopadding featured-blog-section-img">
+				<div class="featured-blog-section-bg">
 					<div class="texture-overlay"></div>
-					<div class="features-img wp1">
-						<img src="img/html5-logo.png" alt="HTML5 Logo">
+					<div class="featured-blog-section-title" waypoint waypoint-classes="animated fadeInLeft" waypoint-offset="75%">
+						<span><h2>Latest Blog Posts</h2></span>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 nopadding">
-				<div class="features-slider">
-					<ul class="slides" id="featuresSlider">
+			<div class="col-md-8 nopadding">
+				<div class="blog-slider">
+					<ul class="slides" id="blogSlider" flickity="{{ { 'cellAlign': 'left', 'contain': true, 'prevNextButtons': false } }}">
 						<li>
 							<h1>The Fore-front of Design &amp; Technology</h1>
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
@@ -70,34 +70,34 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="col-md-4 feature-1 wp2">
+				<div class="col-md-4 feature-1" waypoint waypoint-classes="animated fadeInDown" waypoint-offset="75%">
 					<div class="feature-icon">
 						<i class="fa fa-desktop"></i>
 					</div>
 					<div class="feature-content">
 						<h1>Responsive</h1>
 						<p>Built using HTML5/CSS3 and jQuery, and built using one of the world's most powerful CSS frameworks available, Bootstrap.</p>
-						<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+						<a href="http://tympanus.net/codrops/?p=22554" class="tertiary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
 					</div>
 				</div>
-				<div class="col-md-4 feature-2 wp2 delay-05s">
+				<div class="col-md-4 feature-2 delay-05s" waypoint waypoint-classes="animated fadeInDown" waypoint-offset="75%">
 					<div class="feature-icon">
 						<i class="fa fa-flash"></i>
 					</div>
 					<div class="feature-content">
 						<h1>Multi-Purpose</h1>
 						<p>Perfect if you run your own start-up, product or service. Boxify can showcase your business converting your visits to income.</p>
-						<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+						<a href="http://tympanus.net/codrops/?p=22554" class="tertiary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
 					</div>
 				</div>
-				<div class="col-md-4 feature-3 wp2 delay-1s">
+				<div class="col-md-4 feature-3 delay-1s" waypoint waypoint-classes="animated fadeInDown" waypoint-offset="75%">
 					<div class="feature-icon">
 						<i class="fa fa-heart"></i>
 					</div>
 					<div class="feature-content">
 						<h1>Absolutely Free</h1>
 						<p>As aways, download Boxify for free exclusively from Codrops. If you love Boxify and want to thank me, simply <a href="http://peterfinlan.com/">buy me a beer</a>. </p>
-						<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
+						<a href="http://tympanus.net/codrops/?p=22554" class="tertiary-btn">Read More <i class="fa fa-chevron-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -110,10 +110,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="device wp3">
+					<div class="device" waypoint waypoint-classes="animated bounceInDown" waypoint-offset="75%">
 						<div class="device-content">
 							<div class="showcase-slider">
-								<ul class="slides" id="showcaseSlider">
+								<ul class="slides" id="showcaseSlider" flickity="{{ { 'cellAlign': 'left', 'contain': true,	'prevNextButtons': false,	'imagesLoaded': true } }}">
 									<li>
 										<img src="img/screen1.jpg" alt="Device Content Image">
 									</li>
@@ -148,7 +148,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Screenshots</h1>
+				<h1>Photo Album</h1>
 			</div>
 		</div>
 	</div>
@@ -162,7 +162,7 @@
 						<img src="img/01-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/01.jpg" class="single_image">
+								<a href="img/large/01.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>Optimised For Design</p>
 								</a>
@@ -175,7 +175,7 @@
 						<img src="img/02-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/02.jpg" class="single_image">
+								<a href="img/large/02.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>User Centric Design</p>
 								</a>
@@ -188,7 +188,7 @@
 						<img src="img/03-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/03.jpg" class="single_image">
+								<a href="img/large/03.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>Responsive and Adaptive</p>
 								</a>
@@ -201,7 +201,7 @@
 						<img src="img/04-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/04.jpg" class="single_image">
+								<a href="img/large/04.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>Absolutely Free</p>
 								</a>
@@ -218,7 +218,7 @@
 						<img src="img/05-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/05.jpg" class="single_image">
+								<a href="img/large/05.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>Multi-Purpose Design</p>
 								</a>
@@ -231,7 +231,7 @@
 						<img src="img/06-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/06.jpg" class="single_image">
+								<a href="img/large/06.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>Exclusive to Codrops</p>
 								</a>
@@ -244,7 +244,7 @@
 						<img src="img/07-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/07.jpg" class="single_image">
+								<a href="img/large/07.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>Made with Love</p>
 								</a>
@@ -257,7 +257,7 @@
 						<img src="img/08-screenshot.jpg" alt="Screenshot 01">
 						<figcaption>
 							<div class="caption-content">
-								<a href="img/large/08.jpg" class="single_image">
+								<a href="img/large/08.jpg" class="single_image" fancybox="{{ { padding: 4 } }}">
 									<i class="fa fa-search"></i><br>
 									<p>In Sydney, Australia</p>
 								</a>
@@ -272,7 +272,7 @@
 <section class="download" id="download">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 text-center wp4">
+			<div class="col-md-12 text-center" waypoint waypoint-classes="animated fadeInDown" waypoint-offset="75%">
 				<h1>Seen Enough?</h1>
 				<a href="http://tympanus.net/codrops/?p=22554" class="secondary-btn">Download! <i class="fa fa-download"></i></a>
 			</div>
