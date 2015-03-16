@@ -9,10 +9,15 @@ angular.module('shane.church.home', ['ngRoute'])
 	});
 }])
 
-.controller('HomeCtrl', ['$scope', function ($scope) {
+.controller('HomeCtrl', ['$scope', '$timeout', 'blogService', function ($scope, $timeout, blogService) {
 	$scope.navToggle = function () {
 		$(".nav-toggle").toggleClass("active");
 		$(".overlay-boxify").toggleClass("open");
 	};
 
+	$scope.blogEntries = blogService.query(function () {
+		$timeout(function () {
+			$scope.$broadcast('contentReady');
+		});
+	});
 }]);

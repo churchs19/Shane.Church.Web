@@ -29,10 +29,11 @@ namespace Shane.Church.Web.Blog
 			BlogEntry entry = new BlogEntry();
 			entry.Id = item.Id;
 			entry.EntryDate = item.EntryDate;
+			entry.Title = item.Title;
 			entry.Image = item.Image;
 			entry.ImageText = item.ImageText;
 			entry.Entry = summary ? item.Entry.StripTags().TruncateHtml() : item.Entry;
-			entry.User = item.User;
+			entry.User = item.User;		
 
 			entry.Comments = new List<BlogEntryComment>();
 

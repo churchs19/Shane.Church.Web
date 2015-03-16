@@ -13,8 +13,8 @@ namespace Shane.Church.Web.v2015.Blog.Controllers
     public class BlogEntryController : Controller
     {
         // GET: api/blogentry/recent
-        [HttpGet("recent/{count:int=3}")]
-        public IEnumerable<BlogEntry> Recent(int count, bool summary = false)
+        [HttpGet]
+        public IEnumerable<BlogEntry> GetList(int count = 3, bool summary = true)
         {
             DataContext context = new DataContext();
             var journalEntries = context.Journals.OrderByDescending(it => it.EntryDate).Take(count).ToList();
@@ -25,18 +25,40 @@ namespace Shane.Church.Web.v2015.Blog.Controllers
 
         // GET api/values/5
         [HttpGet("{id:int}")]
-        public BlogEntry Get(int id)
+        public IActionResult Get(int id)
         {
             DataContext context = new DataContext();
-            var entry = context.Journals.SingleOrDefault(it => it.Id == id);		
-            return entry != null ? BlogEntry.fromJournal(entry) : new BlogEntry();
+            var entry = context.Journals.SingleOrDefault(it => it.Id == id);
+			if (entry != null)
+			{
+				return new ObjectResult(BlogEntry.fromJournal(entry));
+			}
+			else
+			{
+				return HttpNotFound();
+			}
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody]BlogEntry value)
         {
-        }
+			if (!ModelState.IsValid)
+			{
+				Context.Response.StatusCode = 400;
+			}
+			else
+			{
+				//item.Id = 1 + _items.Max(x => (int?)x.Id) ?? 0;
+				//_items.Add(item);
+
+				//string url = Url.RouteUrl("GetByIdRoute", new { id = item.Id },
+				//	Request.Scheme, Request.Host.ToUriComponent());
+
+				//Context.Response.StatusCode = 201;
+				//Context.Response.Headers["Location"] = url;
+			}
+		}
 
         // PUT api/values/5
         [HttpPut("{id}")]
