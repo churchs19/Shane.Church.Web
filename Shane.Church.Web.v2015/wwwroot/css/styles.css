@@ -357,7 +357,6 @@ Features Slider
 
 	.features-slider li h3 {
 		margin-bottom: 15px;
-		/*color: #fff;*/
 	}
 
 	.features-slider li h4 {
@@ -546,10 +545,6 @@ Screenshots
 		background-color: #000;
 		list-style: none;
 		position: relative;
-		-ms-perspective: 1000;
-		-moz-perspective: 1000;
-		-webkit-perspective: 1000;
-		perspective: 1000;
 	}
 
 .photos figure {
