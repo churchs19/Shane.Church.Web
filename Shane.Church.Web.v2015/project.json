@@ -28,6 +28,9 @@
 				"Shane.Church.Web.Data.Azure": "1.0.0-*",
 				"Shane.Church.Web.Common": "1.0.0-*",
 				"Shane.Church.Web.Data": "1.0.0-*"
+			},
+			"frameworkAssemblies": {
+				"System.Net.Http": "4.0.0.0"
 			}
 		}
 	}

@@ -1,4 +1,4 @@
-﻿angular.module('shane.church.shared.waypoint', [])
+﻿angular.module('shane.church.shared', [])
 	.directive('waypoint', [function () {
 		function link(scope, element, attrs) {			
 			$(element).waypoint(function() {

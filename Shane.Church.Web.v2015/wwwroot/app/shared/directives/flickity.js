@@ -1,4 +1,4 @@
-﻿angular.module('shane.church.shared.flickity', [])
+﻿angular.module('shane.church.shared', [])
 	.directive('flickity', [function () {
 		function link(scope, element, attrs) {
 			var $attrs = attrs;
