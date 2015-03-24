@@ -5,7 +5,10 @@ angular.module('shane.church', [
   'ngRoute',
   'smoothScroll',
   'shane.church.home',
-  'shane.church.shared',
+  'shane.church.shared.waypoint',
+  'shane.church.shared.fancybox',
+  'shane.church.shared.flickity',
+  'shane.church.shared.photoItem',
   'shane.church.services'
 ]).
 config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

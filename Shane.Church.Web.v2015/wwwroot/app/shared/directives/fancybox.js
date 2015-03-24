@@ -1,4 +1,4 @@
-﻿angular.module('shane.church.shared', [])
+﻿angular.module('shane.church.shared.fancybox', [])
 	.directive('fancybox', [function () {
 		function link(scope, element, attrs) {
 			attrs.$observe('fancybox', function (val) {

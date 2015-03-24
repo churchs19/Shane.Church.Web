@@ -1,10 +1,10 @@
-﻿angular.module('shane.church.shared', [])
-.directive('photo-item', function () {
+﻿angular.module('shane.church.shared.photoItem', [])
+.directive('photoItem', function () {
 	return {
 		restrict: 'E',
 		scope: {
-			photo: '=photo'
+			photoData: '=photo'
 		},
-		templateUrl: 'photo-item.html'
+		templateUrl: 'app/shared/directives/photo-item.html'
 	};
 });

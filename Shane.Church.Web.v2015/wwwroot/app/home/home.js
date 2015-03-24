@@ -9,7 +9,7 @@ angular.module('shane.church.home', ['ngRoute'])
 	});
 }])
 
-.controller('HomeCtrl', ['$scope', '$timeout', 'blogService', function ($scope, $timeout, blogService) {
+.controller('HomeCtrl', ['$scope', '$timeout', 'blogService', 'photoService', function ($scope, $timeout, blogService, photoService) {
 	$scope.navToggle = function () {
 		$(".nav-toggle").toggleClass("active");
 		$(".overlay-boxify").toggleClass("open");
@@ -19,5 +19,9 @@ angular.module('shane.church.home', ['ngRoute'])
 		$timeout(function () {
 			$scope.$broadcast('contentReady');
 		});
+	});
+
+	var photoResponse = photoService.query(function () {
+		$scope.photos = photoResponse;
 	});
 }]);

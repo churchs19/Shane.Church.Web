@@ -540,7 +540,7 @@ Screenshots
 
 	.photos ul li {
 		float: left;
-		min-height: 100%;
+		height: 25vw;
 		width: 25%;
 		background-color: #000;
 		list-style: none;
@@ -617,10 +617,14 @@ Screenshots
 	margin-top: -40px;
 	margin-left: -100px;
 	width: 200px;
-	-webkit-transform: translate(0px, 15px);
-	-ms-transform: translate(0px, 15px);
-	transform: translate(0px, 15px);
+	-webkit-transform: translate(0, 15px);
+	-ms-transform: translate(0, 15px);
+	-moz-transform: translate(0, 15px);
+	-o-transform: translate(0, 15px);
+	transform: translate(0, 15px);
 	-webkit-transition: all 300ms ease-in-out;
+	-moz-transition: all 300ms ease-in-out;
+	-o-transition: all 300ms ease-in-out;
 	transition: all 300ms ease-in-out;
 }
 
