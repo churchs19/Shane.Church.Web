@@ -4,6 +4,8 @@ using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.AspNet.StaticFiles;
+using Microsoft.Framework.Configuration;
+using Microsoft.Framework.Logging;
 
 namespace Shane.Church.Web.v2015
 {
@@ -13,15 +15,13 @@ namespace Shane.Church.Web.v2015
 
 		public Startup()
 		{
-			Configuration = new Configuration().AddJsonFile("config.json");
 		}
 
 		public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
 			app.UseStaticFiles();
 			DefaultFilesOptions dfOpts = new DefaultFilesOptions();

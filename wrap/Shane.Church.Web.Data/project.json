@@ -8,7 +8,7 @@
         "pdb": "../../Shane.Church.Web.Data/obj/{configuration}/Shane.Church.Web.Data.pdb"
       },
       "dependencies": {
-        "EntityFramework": "6.0.2"
+        "EntityFramework": "6.1.3"
       }
     }
   }

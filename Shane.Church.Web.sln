@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22512.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shane.Church.Web.Data", "Shane.Church.Web.Data\Shane.Church.Web.Data.csproj", "{3F700FC4-7009-4A99-8AC5-BDCEDE3AB31A}"
 EndProject
@@ -38,7 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D06980
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shane.Church.Web.v2015", "Shane.Church.Web.v2015\Shane.Church.Web.v2015.kproj", "{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shane.Church.Web.v2015", "Shane.Church.Web.v2015\Shane.Church.Web.v2015.xproj", "{D4FF6E54-899C-4A54-AE66-C468EDBCA3C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
