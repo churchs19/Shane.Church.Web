@@ -1,16 +1,16 @@
-﻿@using Shane.Church.Web.Data.Models;
+@using Shane.Church.Web.Data.Models;
 @using Shane.Church.Web.v2012.Models.Blog;
 @model Shane.Church.Web.v2012.Models.Blog.EntryViewModel
-<article class="blog_entry blog-id-@Model.Entry.Id">
+<article class="blog_entry blog-id-@Model.Entry.Id" data-blogid="@Model.Entry.Id">
 	<h3><a href="@Url.Action("Entry", "Blog", new { id = Model.Entry.Id })">@Html.Raw(Model.Entry.Title)</a></h3>
-	<h4>@Model.Entry.EntryDate.ToLongDateString()&nbsp;@Model.Entry.EntryDate.ToShortTimeString()</h4>
+	<h4 data-entry-date="@Model.Entry.EntryDate.ToUniversalTime().ToString("yyyy/M/d HH:mm:ss")">@Model.Entry.EntryDate.ToLongDateString()&nbsp;@Model.Entry.EntryDate.ToShortTimeString()</h4>
 	@if (Model.Tags.Any())
- { 
+ {
 	<div class="tags">
 		Tags:
 		<ul>
 			@foreach (string tag in Model.Tags)
-   { 
+   {
 			<li>@Html.ActionLink(tag, "Tag", "Blog", new { id = tag }, new { })</li>
    }
 		</ul>
@@ -18,7 +18,7 @@
  }
 	<div class="entry">
 		@if (!String.IsNullOrEmpty(Model.Entry.Image))
-  { 
+  {
 		<img class="blog_image" src="@Url.Content("~/" + Model.Entry.Image)" alt="@Model.Entry.ImageText" />
   }
 		@{
@@ -28,7 +28,7 @@
 	<div class="clear">&nbsp;</div>
 	<div class="entry_links">
 @if (Model.Comments.Count() > 0)
-{ 
+{
 		<div class="entry_by">By: @Model.Entry.User</div><a href="@Url.Action("Entry", "Blog", new { id = Model.Entry.Id })#comments" class="comments_disclosure">@Model.Comments.Count() Comments</a>
 }
 else
@@ -40,10 +40,10 @@ else
 		<h4>Comments</h4>
 		<div class="comments_panel">
 			@if (Model.Comments.Count() > 0)
-   { 
+   {
 			<ul>
 				@foreach (JournalComments comment in Model.Comments)
-	{ 
+	{
 				<li>
 					@Html.Partial("CommentUserControl", comment)
 				</li>
@@ -51,7 +51,7 @@ else
 			</ul>
    }
    else
-   { 
+   {
 			<text>Be the first to comment on this post</text>
    }
 			<div class="new-comment-button">
